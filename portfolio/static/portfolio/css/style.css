@@ -1,0 +1,2454 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+    color: #4b5563;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.75;
+
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-exit {
+    opacity: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
+:root {
+    --primary: #263b53;
+    --primary-dark: #1f2937;
+    --heading: #1f2937;
+
+    --text: #4b5563;
+    --muted: #64748b;
+    --light-text: #94a3b8;
+
+    --border: #e2e8f0;
+    --border-dark: #cbd5e1;
+
+    --soft-bg: #f8fafc;
+    --highlight-bg: #f1f5f9;
+
+    --white: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 40px;
+
+    margin-left: 125px;
+}
+
+.nav-link {
+    position: relative;
+
+    display: block;
+
+    padding: 25px 0;
+
+    color: var(--primary);
+
+    font-size: 17px;
+    font-weight: 400;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark);
+}
+
+.nav-link.active {
+    color: var(--primary-dark);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NAVIGATION UNDERLINE
+========================================================= */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 10px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.desktop-nav-options {
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+}
+
+.mobile-menu-container {
+    display: none;
+
+    position: relative;
+}
+
+.mobile-menu-button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+.mobile-menu-button:hover {
+    color: var(--primary-dark);
+}
+
+.mobile-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 38px;
+    right: 0;
+
+    min-width: 165px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.10);
+
+    z-index: 1000;
+
+    padding: 7px 0;
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+.mobile-menu-link {
+    display: block;
+
+    padding: 10px 18px;
+
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.mobile-menu-link:hover {
+    background: var(--soft-bg);
+
+    color: var(--primary-dark);
+}
+
+.mobile-menu-link.active {
+    color: var(--primary-dark);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+    width: 100%;
+}
+
+.main-layout {
+    display: grid;
+
+    grid-template-columns: 290px minmax(0, 1fr);
+
+    column-gap: 65px;
+
+    padding-top: 78px;
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 100%;
+
+    text-align: center;
+
+    padding-top: 24px;
+}
+
+.profile-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 205px;
+    height: 205px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    border: 5px solid #f1f5f9;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.08);
+}
+
+.profile-name {
+    margin-top: 15px;
+    margin-bottom: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.2px;
+}
+
+.profile-title {
+    margin-top: 1px;
+    margin-bottom: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 17px;
+
+    margin-top: 21px;
+    margin-bottom: 37px;
+}
+
+.social-link {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: var(--light-text);
+
+    font-size: 20px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SIDEBAR BLOCK
+========================================================= */
+
+.sidebar-block {
+    width: 100%;
+
+    text-align: left;
+}
+
+.sidebar-heading {
+    margin: 0;
+
+    color: var(--primary);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    line-height: 1.4;
+}
+
+.sidebar-divider {
+    width: 100%;
+    height: 1px;
+
+    background: var(--border);
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   AFFILIATIONS
+========================================================= */
+
+.affiliation-list {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 38px;
+
+    padding-top: 3px;
+    padding-bottom: 24px;
+}
+
+.affiliation-item {
+    color: #94a3b8;
+
+    font-size: 48px;
+
+    line-height: 1;
+}
+
+.affiliation-item.faded {
+    opacity: 0.40;
+}
+
+
+/* =========================================================
+   CV SECTION
+========================================================= */
+
+.cv-section {
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-button {
+    width: 85%;
+
+    min-height: 34px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 10px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 3px;
+
+    color: var(--primary);
+
+    background: #ffffff;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.cv-button:hover {
+    background: var(--primary);
+
+    color: #ffffff;
+}
+
+.cv-button i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+    min-width: 0;
+
+    width: 100%;
+
+    padding-top: 0;
+}
+
+
+/* =========================================================
+   BIOGRAPHY
+========================================================= */
+
+.biography-section {
+    width: 100%;
+}
+
+.section-title {
+    margin: 0 0 20px 0;
+
+    color: var(--heading);
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    letter-spacing: 0.2px;
+}
+
+.biography-section p {
+    margin: 0 0 20px 0;
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+.biography-section strong {
+    color: var(--primary-dark);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.highlight-box {
+    width: 100%;
+
+    min-height: 63px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 29px;
+    margin-bottom: 43px;
+
+    padding: 12px 18px;
+
+    background: var(--highlight-bg);
+
+    border-left: 4px solid var(--primary);
+
+    border-radius: 0 3px 3px 0;
+}
+
+.highlight-icon {
+    flex-shrink: 0;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+.highlight-text {
+    color: var(--primary);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESEARCH SECTION
+========================================================= */
+
+.research-section {
+    width: 100%;
+}
+
+.research-title {
+    margin: 0;
+
+    color: var(--heading);
+
+    font-size: 23px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: 1.4px;
+}
+
+.content-divider {
+    width: 100%;
+    height: 1px;
+
+    background: var(--border-dark);
+
+    margin-top: 7px;
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   RESEARCH TAGS
+========================================================= */
+
+.research-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.research-tag {
+    display: inline-block;
+
+    padding: 5px 14px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    border-radius: 3px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    border-top: 1px solid var(--border);
+
+    background: #ffffff;
+}
+
+.footer-content {
+    min-height: 75px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO SECTION
+========================================================= */
+
+.portfolio-section {
+    width: 100%;
+
+    padding: 70px 0;
+
+    background: #ffffff;
+}
+
+.portfolio-container {
+    width: 90%;
+
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   PORTFOLIO SIDEBAR
+========================================================= */
+
+.portfolio-sidebar {
+    text-align: center;
+}
+
+
+/* =========================================================
+   PORTFOLIO PROFILE IMAGE
+========================================================= */
+
+.portfolio-sidebar .profile-image {
+    width: 220px;
+    height: 220px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 8px solid #f1f5f9;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.08);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   PORTFOLIO PROFILE TEXT
+========================================================= */
+
+.portfolio-sidebar .profile-name {
+    margin: 10px 0 5px;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    color: var(--primary);
+}
+
+.portfolio-sidebar .profile-title {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   PORTFOLIO SOCIAL LINKS
+========================================================= */
+
+.portfolio-sidebar .social-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.portfolio-sidebar .social-link {
+    color: var(--light-text);
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.portfolio-sidebar .social-link:hover {
+    color: var(--primary);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION
+========================================================= */
+
+.sidebar-section {
+    margin-top: 45px;
+}
+
+.sidebar-section h3 {
+    text-align: left;
+
+    font-size: 16px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--primary);
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.affiliation-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-top: 20px;
+}
+
+.affiliation-icons .affiliation-item {
+    font-size: 55px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   DOWNLOAD CV
+========================================================= */
+
+.portfolio-sidebar .cv-section {
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.download-cv {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px 20px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 4px;
+
+    color: var(--primary);
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.download-cv:hover {
+    background: var(--primary);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PORTFOLIO CONTENT
+========================================================= */
+
+.portfolio-content {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO MAIN HEADING
+========================================================= */
+
+.portfolio-title {
+    margin: 5px 0 50px;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    color: var(--heading);
+}
+
+
+/* =========================================================
+   PORTFOLIO BLOCK
+========================================================= */
+
+.portfolio-block {
+    margin-bottom: 55px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.portfolio-content .section-title {
+    margin: 0 0 30px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 28px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--heading);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 0;
+
+    row-gap: 10px;
+}
+
+.skill-category h3 {
+    margin: 0 0 5px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SKILL TAGS
+========================================================= */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.skill-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--border-dark);
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+.skill-tag i {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.project-item {
+    display: block;
+
+    padding: 20px 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--border-dark);
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.07);
+}
+
+.project-item h3 {
+    margin: 0 0 8px;
+
+    color: var(--primary);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+.project-item p {
+    margin: 5px 0;
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.project-item strong {
+    color: var(--muted);
+}
+
+.project-link {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.project-item:hover .project-link {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-item {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.education-item:first-of-type {
+    padding-top: 0;
+}
+
+.education-icon {
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--soft-bg);
+
+    color: var(--muted);
+
+    font-size: 21px;
+}
+
+.education-details h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    color: var(--primary);
+}
+
+.education-details p {
+    margin: 6px 0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.education-institution {
+    font-weight: 600;
+
+    color: var(--muted) !important;
+}
+
+.education-separator {
+    margin: 0 8px;
+
+    color: var(--border-dark);
+}
+
+
+/* =========================================================
+   ACADEMIC HONORS
+========================================================= */
+
+.honors-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.honor-item {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.honor-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+.honor-icon {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--soft-bg);
+
+    color: var(--muted);
+
+    font-size: 19px;
+}
+
+.honor-content h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: var(--primary);
+}
+
+.honor-content p {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .nav-links {
+        margin-left: 70px;
+    }
+
+    .main-layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+
+        column-gap: 45px;
+    }
+
+    .profile-image {
+        width: 185px;
+        height: 185px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 220px 1fr;
+
+        gap: 40px;
+    }
+
+    .portfolio-sidebar .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .container {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-links {
+        margin-left: 30px;
+
+        gap: 32px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+
+        padding: 22px 0;
+    }
+
+    .main-layout {
+        grid-template-columns: 210px minmax(0, 1fr);
+
+        column-gap: 35px;
+
+        padding-top: 60px;
+    }
+
+    .profile-image {
+        width: 165px;
+        height: 165px;
+    }
+
+    .profile-name {
+        font-size: 19px;
+    }
+
+    .social-links {
+        gap: 14px;
+    }
+
+    .social-link {
+        font-size: 18px;
+    }
+
+    .affiliation-item {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .biography-section p {
+        font-size: 15px;
+    }
+
+    .highlight-text {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+
+    /* Header */
+
+    .navbar {
+        height: auto;
+
+        min-height: 68px;
+
+        justify-content: center;
+
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+
+    .nav-links {
+        margin-left: 0;
+
+        gap: 25px;
+    }
+
+    .nav-link {
+        padding: 3px 0;
+
+        font-size: 15px;
+    }
+
+    .desktop-nav-options {
+        display: none;
+    }
+
+    .mobile-menu-container {
+        display: block;
+    }
+
+
+    /* Main */
+
+    .main-layout {
+        display: block;
+
+        padding-top: 40px;
+        padding-bottom: 55px;
+    }
+
+
+    /* Sidebar */
+
+    .sidebar {
+        padding-top: 0;
+
+        margin-bottom: 55px;
+    }
+
+    .profile-image {
+        width: 175px;
+        height: 175px;
+    }
+
+    .profile-name {
+        margin-top: 13px;
+
+        font-size: 21px;
+    }
+
+    .profile-title {
+        font-size: 13px;
+    }
+
+    .social-links {
+        margin-top: 21px;
+        margin-bottom: 36px;
+
+        gap: 18px;
+    }
+
+    .social-link {
+        font-size: 20px;
+    }
+
+    .sidebar-block {
+        max-width: 300px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cv-section {
+        max-width: 300px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* Content */
+
+    .section-title {
+        font-size: 23px;
+
+        margin-bottom: 18px;
+    }
+
+    .biography-section p {
+        text-align: left;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .highlight-box {
+        margin-top: 27px;
+
+        margin-bottom: 40px;
+
+        padding: 13px 14px;
+
+        gap: 12px;
+    }
+
+    .highlight-text {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .research-title {
+        font-size: 20px;
+
+        letter-spacing: 1px;
+    }
+
+    .research-tag {
+        font-size: 13px;
+
+        padding: 5px 10px;
+    }
+
+
+    /* Portfolio */
+
+    .portfolio-section {
+        padding: 55px 0;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .portfolio-sidebar {
+        max-width: 350px;
+
+        margin: 0 auto;
+    }
+
+    .portfolio-content {
+        width: 100%;
+    }
+
+    .portfolio-title {
+        font-size: 28px;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        min-height: auto;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 4px;
+
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .profile-image {
+        width: 155px;
+        height: 155px;
+    }
+
+    .social-links {
+        gap: 16px;
+    }
+
+    .social-link {
+        font-size: 19px;
+    }
+
+    .research-tags {
+        gap: 7px;
+    }
+
+    .research-tag {
+        font-size: 12px;
+
+        padding: 4px 8px;
+    }
+
+    .portfolio-section {
+        padding: 40px 0;
+    }
+
+    .portfolio-container {
+        width: 92%;
+    }
+
+    .portfolio-content .section-title {
+        font-size: 20px;
+    }
+
+    .education-item {
+        gap: 12px;
+    }
+
+    .education-details h3 {
+        font-size: 15px;
+    }
+
+    .honor-item {
+        padding: 16px;
+
+        gap: 12px;
+    }
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+body {
+    opacity: 1;
+
+    transition: opacity 0.35s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-exit {
+    opacity: 0;
+}
+
+/* =========================================================
+   FINAL PROFESSIONAL COLOR OVERRIDE
+   Paste this at the VERY END of style.css
+========================================================= */
+
+/* Main colors */
+body {
+    background: #ffffff;
+    color: #3f4a56;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.nav-link {
+    color: #172b4d !important;
+}
+
+.nav-link:hover {
+    color: #0b1f3a !important;
+}
+
+.nav-link.active {
+    color: #0b1f3a !important;
+}
+
+.nav-link::after {
+    background: #172b4d !important;
+}
+
+.nav-link.active::after {
+    background: #172b4d !important;
+}
+
+
+/* Mobile menu */
+
+.mobile-menu-button {
+    color: #172b4d;
+}
+
+.mobile-menu-button:hover {
+    color: #0b1f3a;
+}
+
+.mobile-menu {
+    background: #ffffff;
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 8px 25px rgba(23, 43, 77, 0.15);
+}
+
+.mobile-menu-link {
+    color: #172b4d;
+}
+
+.mobile-menu-link:hover {
+    background: #f1f5f9;
+    color: #0b1f3a;
+}
+
+.mobile-menu-link.active {
+    color: #0b1f3a;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-image {
+    border-color: #eef2f7;
+
+    box-shadow:
+        0 5px 18px rgba(23, 43, 77, 0.12);
+}
+
+.profile-name {
+    color: #172b4d !important;
+}
+
+.profile-title {
+    color: #687789 !important;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-link {
+    color: #8a9aad !important;
+}
+
+.social-link:hover {
+    color: #172b4d !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar-heading {
+    color: #172b4d !important;
+}
+
+.sidebar-divider {
+    background: #d8dee6 !important;
+}
+
+
+/* =========================================================
+   AFFILIATION
+========================================================= */
+
+.affiliation-item {
+    color: #8795a5 !important;
+}
+
+
+/* =========================================================
+   CV BUTTON
+========================================================= */
+
+.cv-section {
+    border-top-color: #d8dee6 !important;
+    border-bottom-color: #d8dee6 !important;
+}
+
+.cv-button {
+    border-color: #172b4d !important;
+
+    color: #172b4d !important;
+
+    background: #ffffff !important;
+}
+
+.cv-button:hover {
+    background: #172b4d !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MAIN HEADINGS
+========================================================= */
+
+.section-title {
+    color: #172b4d !important;
+}
+
+.portfolio-title {
+    color: #172b4d !important;
+}
+
+.research-title {
+    color: #172b4d !important;
+}
+
+
+/* =========================================================
+   BODY TEXT
+========================================================= */
+
+.biography-section p {
+    color: #3f4a56 !important;
+}
+
+.biography-section strong {
+    color: #172b4d !important;
+}
+
+.education-details p {
+    color: #4b5563 !important;
+}
+
+.honor-content p {
+    color: #4b5563 !important;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.highlight-box {
+    background: #eef4fa !important;
+
+    border-left-color: #172b4d !important;
+}
+
+.highlight-icon {
+    color: #60748a !important;
+}
+
+.highlight-text {
+    color: #172b4d !important;
+}
+
+
+/* =========================================================
+   RESEARCH TAGS
+========================================================= */
+
+.content-divider {
+    background: #cbd5e1 !important;
+}
+
+.research-tag {
+    background: #172b4d !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-category h3 {
+    color: #52677d !important;
+
+    border-bottom-color: #dbe2e9 !important;
+}
+
+.skill-tag {
+    background: #f8fafc !important;
+
+    border-color: #d7dee6 !important;
+
+    color: #344454 !important;
+}
+
+.skill-tag:hover {
+    background: #eef4fa !important;
+
+    border-color: #9eacbb !important;
+
+    box-shadow:
+        0 4px 12px rgba(23, 43, 77, 0.08);
+}
+
+.skill-tag i {
+    color: #526b84 !important;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-item {
+    border-bottom-color: #e1e6eb !important;
+}
+
+.education-icon {
+    background: #eef2f6 !important;
+
+    color: #526b84 !important;
+}
+
+.education-details h3 {
+    color: #172b4d !important;
+}
+
+.education-institution {
+    color: #60748a !important;
+}
+
+.education-separator {
+    color: #aeb8c3 !important;
+}
+
+
+/* =========================================================
+   ACADEMIC HONORS
+========================================================= */
+
+.honor-item {
+    background: #ffffff !important;
+
+    border-color: #dce2e8 !important;
+}
+
+.honor-item:hover {
+    border-color: #b9c5d1 !important;
+
+    box-shadow:
+        0 6px 22px rgba(23, 43, 77, 0.09) !important;
+}
+
+.honor-icon {
+    background: #eef2f6 !important;
+
+    color: #526b84 !important;
+}
+
+.honor-content h3 {
+    color: #172b4d !important;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-item {
+    background: #ffffff !important;
+
+    border-color: #dce2e8 !important;
+}
+
+.project-item:hover {
+    border-color: #aebbc8 !important;
+
+    box-shadow:
+        0 7px 24px rgba(23, 43, 77, 0.10) !important;
+}
+
+.project-item h3 {
+    color: #172b4d !important;
+}
+
+.project-item p {
+    color: #4b5563 !important;
+}
+
+.project-item strong {
+    color: #526b84 !important;
+}
+
+.project-link {
+    color: #60748a !important;
+}
+
+.project-item:hover .project-link {
+    color: #172b4d !important;
+}
+
+
+/* =========================================================
+   DOWNLOAD CV
+========================================================= */
+
+.download-cv {
+    border-color: #172b4d !important;
+
+    color: #172b4d !important;
+
+    background: #ffffff !important;
+}
+
+.download-cv:hover {
+    background: #172b4d !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: #ffffff;
+
+    border-top-color: #d8dee6 !important;
+}
+
+.footer-content {
+    color: #718096 !important;
+}
+
+/* =========================================================
+   FINAL PROFESSIONAL ACADEMIC COLOR PALETTE
+========================================================= */
+
+/* ---------- MAIN ---------- */
+
+body {
+    background: #ffffff !important;
+    color: #374151 !important;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+.nav-link {
+    color: #1e3a5f !important;
+}
+
+.nav-link:hover {
+    color: #0f2742 !important;
+}
+
+.nav-link.active {
+    color: #0f2742 !important;
+}
+
+.nav-link::after {
+    background: #1e3a5f !important;
+}
+
+.nav-link.active::after {
+    background: #1e3a5f !important;
+}
+
+
+/* ---------- MOBILE MENU ---------- */
+
+.mobile-menu-button {
+    color: #1e3a5f !important;
+}
+
+.mobile-menu-button:hover {
+    color: #0f2742 !important;
+}
+
+.mobile-menu {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+
+    box-shadow:
+        0 8px 25px rgba(15, 39, 66, 0.14) !important;
+}
+
+.mobile-menu-link {
+    color: #1e3a5f !important;
+}
+
+.mobile-menu-link:hover {
+    background: #f1f5f9 !important;
+    color: #0f2742 !important;
+}
+
+.mobile-menu-link.active {
+    color: #0f2742 !important;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-image {
+    border-color: #e2e8f0 !important;
+
+    box-shadow:
+        0 5px 18px rgba(15, 39, 66, 0.12) !important;
+}
+
+.profile-name {
+    color: #173b5f !important;
+}
+
+.profile-title {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-link {
+    color: #94a3b8 !important;
+}
+
+.social-link:hover {
+    color: #1e3a5f !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar-heading {
+    color: #1e3a5f !important;
+}
+
+.sidebar-divider {
+    background: #d7dee7 !important;
+}
+
+
+/* =========================================================
+   AFFILIATION
+========================================================= */
+
+.affiliation-item {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   CV BUTTON
+========================================================= */
+
+.cv-section {
+    border-top-color: #d7dee7 !important;
+    border-bottom-color: #d7dee7 !important;
+}
+
+.cv-button {
+    border-color: #1e3a5f !important;
+    color: #1e3a5f !important;
+    background: #ffffff !important;
+}
+
+.cv-button:hover {
+    background: #1e3a5f !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MAIN HEADINGS
+========================================================= */
+
+.section-title {
+    color: #173b5f !important;
+}
+
+.portfolio-title {
+    color: #173b5f !important;
+}
+
+.research-title {
+    color: #173b5f !important;
+}
+
+
+/* =========================================================
+   BODY TEXT
+========================================================= */
+
+.biography-section p {
+    color: #374151 !important;
+}
+
+.biography-section strong {
+    color: #173b5f !important;
+}
+
+.education-details p {
+    color: #4b5563 !important;
+}
+
+.honor-content p {
+    color: #4b5563 !important;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.highlight-box {
+    background: #edf4fa !important;
+
+    border-left-color: #1e3a5f !important;
+}
+
+.highlight-icon {
+    color: #64748b !important;
+}
+
+.highlight-text {
+    color: #173b5f !important;
+}
+
+
+/* =========================================================
+   RESEARCH TAGS
+========================================================= */
+
+.content-divider {
+    background: #cbd5e1 !important;
+}
+
+.research-tag {
+    background: #1e3a5f !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-category h3 {
+    color: #52677d !important;
+    border-bottom-color: #d8e0e8 !important;
+}
+
+.skill-tag {
+    background: #f8fafc !important;
+    border-color: #d6dee7 !important;
+    color: #374151 !important;
+}
+
+.skill-tag:hover {
+    background: #edf4fa !important;
+    border-color: #9aaabd !important;
+
+    box-shadow:
+        0 4px 12px rgba(15, 39, 66, 0.08) !important;
+}
+
+.skill-tag i {
+    color: #526b84 !important;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-item {
+    border-bottom-color: #e1e6eb !important;
+}
+
+.education-icon {
+    background: #edf2f7 !important;
+    color: #526b84 !important;
+}
+
+.education-details h3 {
+    color: #173b5f !important;
+}
+
+.education-institution {
+    color: #60748a !important;
+}
+
+.education-separator {
+    color: #aeb8c3 !important;
+}
+
+
+/* =========================================================
+   ACADEMIC HONORS
+========================================================= */
+
+.honor-item {
+    background: #ffffff !important;
+    border-color: #d8e0e8 !important;
+}
+
+.honor-item:hover {
+    border-color: #aebdcd !important;
+
+    box-shadow:
+        0 6px 22px rgba(15, 39, 66, 0.09) !important;
+}
+
+.honor-icon {
+    background: #edf2f7 !important;
+    color: #526b84 !important;
+}
+
+.honor-content h3 {
+    color: #173b5f !important;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-item {
+    background: #ffffff !important;
+    border-color: #d8e0e8 !important;
+}
+
+.project-item:hover {
+    border-color: #aebdcd !important;
+
+    box-shadow:
+        0 7px 24px rgba(15, 39, 66, 0.10) !important;
+}
+
+.project-item h3 {
+    color: #173b5f !important;
+}
+
+.project-item p {
+    color: #4b5563 !important;
+}
+
+.project-item strong {
+    color: #526b84 !important;
+}
+
+.project-link {
+    color: #60748a !important;
+}
+
+.project-item:hover .project-link {
+    color: #173b5f !important;
+}
+
+
+/* =========================================================
+   DOWNLOAD CV
+========================================================= */
+
+.download-cv {
+    border-color: #1e3a5f !important;
+    color: #1e3a5f !important;
+    background: #ffffff !important;
+}
+
+.download-cv:hover {
+    background: #1e3a5f !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: #ffffff !important;
+    border-top-color: #d7dee7 !important;
+}
+
+.footer-content {
+    color: #718096 !important;
+}
+
+/* =========================================================
+   FIXED / STICKY HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #d7dee7;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
