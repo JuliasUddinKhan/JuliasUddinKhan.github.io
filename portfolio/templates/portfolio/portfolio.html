@@ -1,0 +1,938 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Academic portfolio of Julias Uddin Khan"
+    >
+
+    <meta
+        name="author"
+        content="Julias Uddin Khan"
+    >
+
+    <title>
+        Julias Uddin Khan | Portfolio
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio/css/style.css' %}"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <style>
+
+        .desktop-nav-options {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .mobile-menu-container {
+            display: none;
+            position: relative;
+        }
+
+        .mobile-menu-button {
+            border: none;
+            background: transparent;
+            color: #344454;
+            font-size: 19px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-button:hover {
+            color: #30445a;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 38px;
+            right: 0;
+            min-width: 165px;
+
+            background: #ffffff;
+
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.10);
+
+            z-index: 1000;
+
+            padding: 7px 0;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu-link {
+            display: block;
+            padding: 10px 18px;
+
+            color: #344454;
+
+            font-size: 14px;
+            font-weight: 400;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+
+        .mobile-menu-link:hover {
+            background: #f5f7f9;
+            color: #30445a;
+        }
+
+        .mobile-menu-link.active {
+            color: #30445a;
+            font-weight: 700;
+        }
+
+        @media (max-width: 700px) {
+
+            .desktop-nav-options {
+                display: none;
+            }
+
+            .mobile-menu-container {
+                display: block;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+        }
+
+        @media (max-width: 420px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER / NAVIGATION
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="nav-links">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="{% url 'home' %}"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <!-- PORTFOLIO -->
+
+                <a
+                    href="{% url 'portfolio' %}"
+                    class="nav-link active"
+                >
+                    Portfolio
+                </a>
+
+
+                <!-- DESKTOP OPTIONS -->
+
+                <div class="desktop-nav-options">
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="nav-link"
+                    >
+                        Projects
+                    </a>
+
+
+                    <a
+                        href="{% url 'achievements' %}"
+                        class="nav-link"
+                    >
+                        Achievements
+                    </a>
+
+                </div>
+
+
+                <!-- MOBILE MENU -->
+
+                <div class="mobile-menu-container">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div
+                        class="mobile-menu"
+                        id="mobileMenu"
+                    >
+
+                        <a
+                            href="{% url 'projects' %}"
+                            class="mobile-menu-link"
+                        >
+                            Projects
+                        </a>
+
+
+                        <a
+                            href="{% url 'achievements' %}"
+                            class="mobile-menu-link"
+                        >
+                            Achievements
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main>
+
+    <div class="container">
+
+        <div class="main-layout">
+
+
+            <!-- =================================================
+                 LEFT SIDEBAR
+            ================================================== -->
+
+            <aside class="sidebar">
+
+                <div class="profile-container">
+
+                    <img
+                        src="{% static 'portfolio/files/profile.jpeg' %}"
+                        alt="Julias Uddin Khan"
+                        class="profile-image"
+                    >
+
+                </div>
+
+
+                <h1 class="profile-name">
+                    Julias Uddin Khan
+                </h1>
+
+
+                <p class="profile-title">
+
+                    MSc/PhD Aspirants |
+                    Researcher in Machine Learning,
+                    Deep Learning &amp; Explainable AI |
+                    Full-Stack Developer |
+                    CSE @ University of Asia Pacific
+
+                </p>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
+                        class="social-link"
+                        aria-label="Email"
+                        title="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=22201034@uap-bd.edu"
+                        class="social-link"
+                        aria-label="University Email"
+                        title="University Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </a>
+
+
+                    <a
+                        href="https://github.com/JuliasUddinKhan"
+                        class="social-link"
+                        aria-label="GitHub"
+                        title="GitHub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/juliasuddinkhan/"
+                        class="social-link"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+
+                    <a
+                        href="https://facebook.com/juliasuddinkhan"
+                        class="social-link"
+                        aria-label="Facebook"
+                        title="Facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+
+                    <a
+                        href="https://www.instagram.com/julias_jisan"
+                        class="social-link"
+                        aria-label="Instagram"
+                        title="Instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="cv-section">
+
+                    <a
+                        href="{% static 'portfolio/files/Julias Uddin Khan_CV.pdf' %}"
+                        class="cv-button"
+                        download
+                    >
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        <span>
+                            DOWNLOAD CV
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 RIGHT CONTENT
+            ================================================== -->
+
+            <section class="portfolio-content">
+
+
+                <h1 class="portfolio-title">
+                    PORTFOLIO
+                </h1>
+
+
+                <!-- RESEARCH INTERESTS -->
+
+                <section class="portfolio-block">
+
+                    <h2 class="section-title">
+                        RESEARCH INTERESTS
+                    </h2>
+
+
+                    <div class="research-tags">
+
+                        <span class="research-tag">
+                            Machine Learning
+                        </span>
+
+                        <span class="research-tag">
+                            Deep Learning
+                        </span>
+
+                        <span class="research-tag">
+                            Explainable AI
+                        </span>
+
+
+                        <span class="research-tag">
+                            Retrieval-Augmented Generation
+                        </span>
+
+                    </div>
+
+                </section>
+
+                <section class="portfolio-block">
+
+                    <h2 class="section-title">
+                        CURRENTLY LEARNING
+                    </h2>
+
+
+                    <div class="research-tags">
+
+                        <span class="research-tag">
+                            Natural Language Processing
+                        </span>
+
+                        <span class="research-tag">
+                            Blockchain Technology
+                        </span>
+
+                        <span class="research-tag">
+                            VLSI Design
+                        </span>
+
+                        <span class="research-tag">
+                            Linux System Administration
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TECHNICAL SKILLS -->
+
+                <section class="portfolio-block">
+
+                    <h2 class="section-title">
+                        TECHNICAL SKILLS
+                    </h2>
+
+
+                    <div class="skills-grid">
+
+
+                        <div class="skill-category">
+
+                            <h3>
+                                PROGRAMMING LANGUAGES
+                            </h3>
+
+                            <div class="skill-tags">
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-c"></i>
+                                    C
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-code"></i>
+                                    C++
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-brands fa-python"></i>
+                                    Python
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-brands fa-java"></i>
+                                    Java
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill-category">
+
+                            <h3>
+                                AI &amp; DATA SCIENCE
+                            </h3>
+
+                            <div class="skill-tags">
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-brain"></i>
+                                    Machine Learning
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                    Deep Learning
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    Explainable AI (XAI)
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                    Data Visualization
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill-category">
+
+                            <h3>
+                                SOFTWARE ENGINEERING
+                            </h3>
+
+                            <div class="skill-tags">
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-vial"></i>
+                                    Software Testing
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-cubes"></i>
+                                    Object-Oriented Programming (OOP)
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-globe"></i>
+                                    Web Development
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill-category">
+
+                            <h3>
+                                DATABASE
+                            </h3>
+
+                            <div class="skill-tags">
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-database"></i>
+                                    Database Management Systems (DBMS)
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-server"></i>
+                                    MySQL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill-category">
+
+                            <h3>
+                                TOOLS &amp; TECHNOLOGIES
+                            </h3>
+
+                            <div class="skill-tags">
+
+                                <span class="skill-tag">
+                                    <i class="fa-brands fa-github"></i>
+                                    GitHub
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-code"></i>
+                                    VS Code
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                    PyCharm
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    Arduino IDE
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-drafting-compass"></i>
+                                    AutoCAD
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-cube"></i>
+                                    Tinkercad
+                                </span>
+
+                                <span class="skill-tag">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                    OptiSystem
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EDUCATION -->
+
+                <section class="portfolio-block">
+
+                    <h2 class="section-title">
+                        EDUCATION
+                    </h2>
+
+
+                    <div class="education-item">
+
+                        <div class="education-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div class="education-details">
+
+                            <h3>
+                                Bachelor of Science in Computer Science &amp; Engineering (CSE)
+                            </h3>
+
+                            <p class="education-institution">
+                                University of Asia Pacific (UAP)
+                            </p>
+
+                            <p>
+                                <strong>CGPA:</strong>
+                                3.86/4.00
+
+                                <span class="education-separator">
+                                    |
+                                </span>
+
+                                Up to 7th Semester
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Expected Graduation:
+                                </strong>
+                                December 2026
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Registration ID:
+                                </strong>
+                                22201034
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="education-icon">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+
+                        <div class="education-details">
+
+                            <h3>
+                                Higher Secondary Certificate (HSC)
+                            </h3>
+
+                            <p class="education-institution">
+                                BPATC School &amp; College
+                            </p>
+
+                            <p>
+                                <strong>GPA:</strong>
+                                5.00/5.00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="education-icon">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+
+                        <div class="education-details">
+
+                            <h3>
+                                Secondary School Certificate (SSC)
+                            </h3>
+
+                            <p class="education-institution">
+                                Dhamrai Hardinge High School &amp; College
+                            </p>
+
+                            <p>
+                                <strong>GPA:</strong>
+                                5.00/5.00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ACADEMIC HONORS -->
+
+                <section class="portfolio-block">
+
+                    <h2 class="section-title">
+                        ACADEMIC HONORS
+                    </h2>
+
+
+                    <div class="honors-container">
+
+
+                        <div class="honor-item">
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    University Academic Honors
+                                </h3>
+
+                                <p>
+
+                                    Awarded the
+                                    <strong>
+                                        Vice Chancellor’s Honor Award
+                                    </strong>
+                                    in two semesters and the
+                                    <strong>
+                                        Dean’s Honor Award
+                                    </strong>
+                                    in four semesters in recognition
+                                    of academic excellence at the
+                                    University of Asia Pacific (UAP).
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="honor-item">
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    Board Scholarship
+                                </h3>
+
+                                <p>
+
+                                    Awarded the
+                                    <strong>
+                                        Board Scholarship
+                                    </strong>
+                                    in the Secondary School Certificate
+                                    (SSC) examination from the
+                                    <strong>
+                                        Dhaka Board, Bangladesh
+                                    </strong>.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <p>
+                © 2026 Julias Uddin Khan
+            </p>
+
+            <p>
+                Last Updated: September 2026
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script
+    src="{% static 'portfolio/js/script.js' %}"
+></script>
+
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const menuButton =
+            document.getElementById("mobileMenuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        if (!menuButton || !mobileMenu) {
+            return;
+        }
+
+
+        menuButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const isOpen =
+                mobileMenu.classList.toggle("show");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !mobileMenu.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+
+                mobileMenu.classList.remove("show");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

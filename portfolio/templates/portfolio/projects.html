@@ -1,0 +1,759 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Projects of Julias Uddin Khan"
+    >
+
+    <meta
+        name="author"
+        content="Julias Uddin Khan"
+    >
+
+    <title>
+        Julias Uddin Khan | Projects
+    </title>
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio/css/style.css' %}"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <style>
+
+        .desktop-nav-options {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .mobile-menu-container {
+            display: none;
+            position: relative;
+        }
+
+        .mobile-menu-button {
+            border: none;
+            background: transparent;
+            color: #344454;
+            font-size: 19px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-button:hover {
+            color: #30445a;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 38px;
+            right: 0;
+            min-width: 165px;
+
+            background: #ffffff;
+
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.10);
+
+            z-index: 1000;
+
+            padding: 7px 0;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu-link {
+            display: block;
+            padding: 10px 18px;
+
+            color: #344454;
+
+            font-size: 14px;
+            font-weight: 400;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+
+        .mobile-menu-link:hover {
+            background: #f5f7f9;
+            color: #30445a;
+        }
+
+        .mobile-menu-link.active {
+            color: #30445a;
+            font-weight: 700;
+        }
+
+        @media (max-width: 700px) {
+
+            .desktop-nav-options {
+                display: none;
+            }
+
+            .mobile-menu-container {
+                display: block;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+        }
+
+        @media (max-width: 420px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="nav-links">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="{% url 'home' %}"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <!-- PORTFOLIO -->
+
+                <a
+                    href="{% url 'portfolio' %}"
+                    class="nav-link"
+                >
+                    Portfolio
+                </a>
+
+
+                <!-- DESKTOP OPTIONS -->
+
+                <div class="desktop-nav-options">
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="nav-link active"
+                    >
+                        Projects
+                    </a>
+
+
+                    <a
+                        href="{% url 'achievements' %}"
+                        class="nav-link"
+                    >
+                        Achievements
+                    </a>
+
+                </div>
+
+
+                <!-- MOBILE MENU -->
+
+                <div class="mobile-menu-container">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div
+                        class="mobile-menu"
+                        id="mobileMenu"
+                    >
+
+                        <a
+                            href="{% url 'projects' %}"
+                            class="mobile-menu-link active"
+                        >
+                            Projects
+                        </a>
+
+
+                        <a
+                            href="{% url 'achievements' %}"
+                            class="mobile-menu-link"
+                        >
+                            Achievements
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main>
+
+    <div class="container">
+
+        <div class="main-layout">
+
+
+            <!-- =================================================
+                 LEFT SIDEBAR
+            ================================================== -->
+
+            <aside class="sidebar">
+
+                <div class="profile-container">
+
+                    <img
+                        src="{% static 'portfolio/files/profile.jpeg' %}"
+                        alt="Julias Uddin Khan"
+                        class="profile-image"
+                    >
+
+                </div>
+
+
+                <h1 class="profile-name">
+                    Julias Uddin Khan
+                </h1>
+
+
+                <p class="profile-title">
+
+                    MSc/PhD Aspirants |
+                    Researcher in Machine Learning,
+                    Deep Learning &amp; Explainable AI |
+                    Full-Stack Developer |
+                    CSE @ University of Asia Pacific
+
+                </p>
+
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="social-links">
+
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Email"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=22201034@uap-bd.edu"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="University Email"
+                    >
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </a>
+
+                    <a
+                        href="https://github.com/JuliasUddinKhan"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="GitHub"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/juliasuddinkhan/"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="LinkedIn"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a
+                        href="https://facebook.com/juliasuddinkhan"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/julias_jisan"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- DOWNLOAD CV -->
+
+                <div class="cv-section">
+
+                    <a
+                        href="{% static 'portfolio/files/Julias Uddin Khan_CV.pdf' %}"
+                        class="cv-button"
+                        download
+                    >
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        <span>
+                            DOWNLOAD CV
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 PROJECT CONTENT
+            ================================================== -->
+
+            <section class="portfolio-content">
+
+                <h1 class="portfolio-title">
+                    PROJECTS
+                </h1>
+
+
+                <section class="portfolio-block">
+
+                    <div class="honors-container">
+
+
+                        <!-- 1. SEPSIS -->
+
+                        <a
+                            href="https://huggingface.co/spaces/Arni15/Explainable-sepsis-prediction"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    Explainable Early Sepsis Prediction Using Temporal Deep Learning and XAI
+                                </h3>
+
+                                <p>
+                                    Develop an explainable deep learning
+                                    model for early sepsis prediction
+                                    using ICU time-series data.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 2. QUANTADOT -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/QuantaDot"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    QuantaDOT
+                                </h3>
+
+                                <p>
+                                    A low-cost Arduino-based educational
+                                    robot that transforms passive smartphone
+                                    usage into an interactive STEM learning
+                                    experience. The robot supports Bluetooth
+                                    control, voice command control, and
+                                    autonomous obstacle avoidance, enabling
+                                    students to explore robotics, embedded
+                                    systems, and intelligent navigation
+                                    through hands-on learning.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 3. LOAN MANAGEMENT -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/Loan_Management"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    Loan Management Prediction
+                                </h3>
+
+                                <p>
+                                    The Loan Management System is a
+                                    Machine Learning-based web application
+                                    designed to assist financial institutions
+                                    in evaluating loan applications and
+                                    predicting loan approval outcomes.
+                                    By analyzing applicant information such
+                                    as income, education, employment status,
+                                    credit history, loan amount, and other
+                                    financial attributes, the system predicts
+                                    whether a loan should be approved.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 4. HOPEHUB -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/HopeHub"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    HopeHub
+                                </h3>
+
+                                <p>
+                                    HopeHub is a community-driven web
+                                    platform developed to simplify the
+                                    process of donating, volunteering,
+                                    and requesting assistance. The platform
+                                    acts as a bridge between donors,
+                                    volunteers, non-governmental organizations
+                                    (NGOs), and individuals in need by
+                                    providing a centralized system for
+                                    managing donations, campaigns,
+                                    volunteer activities, and requests.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 5. ESP32-CAM -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/ESP32-Cam-Surveillance-Robot"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    ESP32-CAM Based Surveillance Car
+                                </h3>
+
+                                <p>
+                                    The ESP32-CAM Surveillance Robot is a
+                                    Wi-Fi-controlled robotic vehicle that
+                                    combines real-time video streaming with
+                                    wireless navigation. Built around the
+                                    ESP32-CAM module, the robot allows users
+                                    to remotely monitor environments while
+                                    controlling movement through a web
+                                    interface.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 6. PHOENIX MART -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/Phoenix_Mart"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    Phoenix Mart
+                                </h3>
+
+                                <p>
+                                    Phoenix_Mart is a relational database
+                                    project developed as a complete online
+                                    shopping management system. The project
+                                    demonstrates the design and implementation
+                                    of an efficient database capable of
+                                    handling every major operation of an
+                                    e-commerce platform, including customer
+                                    management, product cataloging, inventory
+                                    control, order processing, payment
+                                    management, discounts, shopping carts,
+                                    and customer reviews.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- 7. ROKTO LAGBE -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan/Rokto_Lagbe"
+                            class="honor-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <div class="honor-icon">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+
+                            <div class="honor-content">
+
+                                <h3>
+                                    Rokto Lagbe
+                                </h3>
+
+                                <p>
+                                    Rokto Lagbe is a web-based Blood Bank
+                                    Management System designed to make blood
+                                    donation and blood requests more efficient,
+                                    transparent, and accessible. The platform
+                                    connects blood donors, recipients,
+                                    hospitals, and administrators through a
+                                    centralized system, enabling quick access
+                                    to blood availability during emergencies.
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <p>
+                © 2026 Julias Uddin Khan
+            </p>
+
+            <p>
+                Last Updated: September 2026
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script
+    src="{% static 'portfolio/js/script.js' %}"
+></script>
+
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const menuButton =
+            document.getElementById("mobileMenuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        if (!menuButton || !mobileMenu) {
+            return;
+        }
+
+
+        menuButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const isOpen =
+                mobileMenu.classList.toggle("show");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !mobileMenu.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+
+                mobileMenu.classList.remove("show");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
