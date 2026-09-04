@@ -5,10 +5,6 @@
 <head>
 
 ```
-<!-- =========================================
-     BASIC INFORMATION
-========================================== -->
-
 <meta charset="UTF-8">
 
 <meta
@@ -26,24 +22,10 @@
     content="Julias Uddin Khan"
 >
 
-<title>
-    Julias Uddin Khan
-</title>
+<title>Julias Uddin Khan</title>
 
 
-<!-- =========================================
-     MAIN CSS
-========================================== -->
-
-<link
-    rel="stylesheet"
-    href="css/style.css"
->
-
-
-<!-- =========================================
-     FONT AWESOME
-========================================== -->
+<!-- Font Awesome -->
 
 <link
     rel="stylesheet"
@@ -51,9 +33,13 @@
 >
 
 
-<!-- =========================================
-     MOBILE NAVIGATION
-========================================== -->
+<!-- Main CSS -->
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
 
 <style>
 
@@ -63,12 +49,10 @@
         gap: 45px;
     }
 
-
     .mobile-menu-container {
         display: none;
         position: relative;
     }
-
 
     .mobile-menu-button {
         border: none;
@@ -79,68 +63,47 @@
         padding: 5px;
     }
 
-
     .mobile-menu-button:hover {
         color: #30445a;
     }
 
-
     .mobile-menu {
         display: none;
-
         position: absolute;
-
         top: 38px;
         right: 0;
-
         min-width: 165px;
-
         background: #ffffff;
-
         border: 1px solid #dddddd;
         border-radius: 4px;
-
-        box-shadow:
-            0 6px 20px rgba(0, 0, 0, 0.10);
-
+        box-shadow: 0 6px 20px rgba(0,0,0,0.10);
         z-index: 1000;
-
         padding: 7px 0;
     }
-
 
     .mobile-menu.show {
         display: block;
     }
 
-
     .mobile-menu-link {
         display: block;
-
         padding: 10px 18px;
-
         color: #344454;
-
         font-size: 14px;
         font-weight: 400;
-
         text-decoration: none;
-
         white-space: nowrap;
     }
-
 
     .mobile-menu-link:hover {
         background: #f5f7f9;
         color: #30445a;
     }
 
-
     .mobile-menu-link.active {
         color: #30445a;
         font-weight: 700;
     }
-
 
     @media (max-width: 700px) {
 
@@ -158,7 +121,6 @@
 
     }
 
-
     @media (max-width: 420px) {
 
         .nav-links {
@@ -174,496 +136,399 @@
 
 <body>
 
-```
 <!-- =====================================================
-     HEADER / NAVIGATION
+     HEADER
 ====================================================== -->
 
 <header class="site-header">
 
-    <div class="container">
+```
+<div class="container">
 
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <div class="nav-links">
+        <div class="nav-links">
+
+            <a
+                href="index.html"
+                class="nav-link active"
+            >
+                Home
+            </a>
 
 
-                <!-- HOME -->
+            <a
+                href="portfolio.html"
+                class="nav-link"
+            >
+                Portfolio
+            </a>
+
+
+            <div class="desktop-nav-options">
 
                 <a
-                    href="index.html"
-                    class="nav-link active"
-                >
-                    Home
-                </a>
-
-
-                <!-- PORTFOLIO -->
-
-                <a
-                    href="portfolio.html"
+                    href="projects.html"
                     class="nav-link"
                 >
-                    Portfolio
+                    Projects
                 </a>
 
 
-                <!-- DESKTOP ONLY -->
+                <a
+                    href="achievement.html"
+                    class="nav-link"
+                >
+                    Achievements
+                </a>
 
-                <div class="desktop-nav-options">
+            </div>
 
-                    <!-- PROJECTS -->
+
+            <div class="mobile-menu-container">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div
+                    class="mobile-menu"
+                    id="mobileMenu"
+                >
 
                     <a
                         href="projects.html"
-                        class="nav-link"
+                        class="mobile-menu-link"
                     >
                         Projects
                     </a>
 
 
-                    <!-- ACHIEVEMENTS -->
-
                     <a
                         href="achievement.html"
-                        class="nav-link"
+                        class="mobile-menu-link"
                     >
                         Achievements
                     </a>
 
                 </div>
 
+            </div>
 
-                <!-- MOBILE MENU -->
+        </div>
 
-                <div class="mobile-menu-container">
+    </nav>
 
-                    <button
-                        type="button"
-                        class="mobile-menu-button"
-                        id="mobileMenuButton"
-                        aria-label="Open navigation menu"
-                        aria-expanded="false"
-                    >
+</div>
+```
 
-                        <i class="fa-solid fa-bars"></i>
+</header>
 
-                    </button>
+<!-- =====================================================
+     MAIN
+====================================================== -->
 
+<main>
 
-                    <div
-                        class="mobile-menu"
-                        id="mobileMenu"
-                    >
+```
+<div class="container">
 
-                        <!-- PROJECTS -->
-
-                        <a
-                            href="projects.html"
-                            class="mobile-menu-link"
-                        >
-                            Projects
-                        </a>
+    <div class="main-layout">
 
 
-                        <!-- ACHIEVEMENTS -->
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
 
-                        <a
-                            href="achievement.html"
-                            class="mobile-menu-link"
-                        >
-                            Achievements
-                        </a>
+        <aside class="sidebar">
 
-                    </div>
+
+            <div class="profile-container">
+
+                <img
+                    src="files/profile.jpeg"
+                    alt="Julias Uddin Khan"
+                    class="profile-image"
+                >
+
+            </div>
+
+
+            <h1 class="profile-name">
+                Julias Uddin Khan
+            </h1>
+
+
+            <p class="profile-title">
+
+                MSc/PhD Aspirants |
+                Researcher in Machine Learning,
+                Deep Learning &amp; Explainable AI |
+                Full-Stack Developer |
+                CSE @ University of Asia Pacific
+
+            </p>
+
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Personal Email"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=22201034@uap-bd.edu"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="University Email"
+                >
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </a>
+
+
+                <a
+                    href="https://github.com/JuliasUddinKhan"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/juliasuddinkhan/"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+
+                <a
+                    href="https://facebook.com/juliasuddinkhan"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook"
+                >
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/julias_jisan"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+
+            <div class="cv-section">
+
+                <a
+                    href="files/Julias Uddin Khan_CV.pdf"
+                    class="cv-button"
+                    download
+                >
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <span>
+                        DOWNLOAD CV
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <section class="biography-section">
+
+                <h2 class="section-title">
+                    BIOGRAPHY
+                </h2>
+
+
+                <p>
+
+                    <strong>Julias Uddin Khan</strong>
+                    is a Computer Science and Engineering
+                    student at
+                    <strong>University of Asia Pacific</strong>,
+                    with a strong passion for
+                    <strong>Artificial Intelligence</strong>,
+                    <strong>Machine Learning</strong>,
+                    <strong>Deep Learning</strong>,
+                    <strong>Explainable AI</strong>, and
+                    <strong>
+                        Retrieval-Augmented Generation (RAG)
+                    </strong>.
+
+                </p>
+
+
+                <p>
+
+                    I am driven by continuous learning,
+                    research, and innovation, with a goal of
+                    building intelligent and impactful solutions
+                    that create meaningful value for people
+                    and society.
+
+                </p>
+
+
+                <p>
+
+                    My interests lie at the intersection of
+                    AI research and practical software development.
+
+                    My current research focuses on applying
+                    Machine Learning, Deep Learning, and
+                    Explainable AI.
+
+                    I am also exploring multilingual
+                    Question Answering systems using
+                    Retrieval-Augmented Generation (RAG).
+
+                </p>
+
+
+                <p>
+
+                    Beyond research, I have experience working
+                    with <strong>backend development</strong>,
+                    <strong>web applications</strong>,
+                    <strong>databases</strong>,
+                    <strong>IoT</strong>, and
+                    <strong>robotics</strong> projects.
+
+                    I enjoy turning ideas into practical solutions
+                    and exploring emerging technologies that can
+                    address real-world challenges.
+
+                </p>
+
+
+                <p>
+
+                    Beyond technology and research, I enjoy
+                    <strong>Travelling</strong> and
+                    <strong>Content Creation</strong>.
+
+                    I love wandering through places, capturing
+                    faces, and telling untold stories one frame
+                    at a time.
+
+                    As a content creator, I capture moments,
+                    craft stories, and create visuals that speak
+                    louder than words.
+
+                </p>
+
+            </section>
+
+
+
+            <div class="highlight-box">
+
+                <div class="highlight-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
+
+                <div class="highlight-text">
+
+                    I am actively interested in research
+                    opportunities and collaborations.
 
                 </div>
 
             </div>
 
-        </nav>
-
-    </div>
-
-</header>
 
 
-<!-- =====================================================
-     MAIN CONTENT
-====================================================== -->
+            <section class="research-section">
 
-<main>
-
-    <div class="container">
-
-        <div class="main-layout">
+                <h2 class="research-title">
+                    AREAS OF INTEREST
+                </h2>
 
 
-            <!-- =================================================
-                 LEFT SIDEBAR
-            ================================================== -->
-
-            <aside class="sidebar">
+                <div class="content-divider"></div>
 
 
-                <!-- PROFILE PHOTO -->
+                <div class="research-tags">
 
-                <div class="profile-container">
+                    <span class="research-tag">
+                        Full-Stack Development
+                    </span>
 
-                    <img
-                        src="files/profile.jpeg"
-                        alt="Julias Uddin Khan"
-                        class="profile-image"
-                    >
+                    <span class="research-tag">
+                        Machine Learning
+                    </span>
 
-                </div>
+                    <span class="research-tag">
+                        Deep Learning
+                    </span>
 
+                    <span class="research-tag">
+                        Explainable AI
+                    </span>
 
-                <!-- NAME -->
-
-                <h1 class="profile-name">
-                    Julias Uddin Khan
-                </h1>
-
-
-                <!-- DESCRIPTION -->
-
-                <p class="profile-title">
-
-                    MSc/PhD Aspirants |
-                    Researcher in Machine Learning,
-                    Deep Learning &amp; Explainable AI |
-                    Full-Stack Developer |
-                    CSE @ University of Asia Pacific
-
-                </p>
-
-
-                <!-- SOCIAL LINKS -->
-
-                <div class="social-links">
-
-
-                    <!-- PERSONAL EMAIL -->
-
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
-                        class="social-link"
-                        aria-label="Email"
-                        title="Email"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                    </a>
-
-
-                    <!-- UNIVERSITY EMAIL -->
-
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=22201034@uap-bd.edu"
-                        class="social-link"
-                        aria-label="University Email"
-                        title="University Email"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-solid fa-graduation-cap"></i>
-
-                    </a>
-
-
-                    <!-- GITHUB -->
-
-                    <a
-                        href="https://github.com/JuliasUddinKhan"
-                        class="social-link"
-                        aria-label="GitHub"
-                        title="GitHub"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-brands fa-github"></i>
-
-                    </a>
-
-
-                    <!-- LINKEDIN -->
-
-                    <a
-                        href="https://www.linkedin.com/in/juliasuddinkhan/"
-                        class="social-link"
-                        aria-label="LinkedIn"
-                        title="LinkedIn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-brands fa-linkedin"></i>
-
-                    </a>
-
-
-                    <!-- FACEBOOK -->
-
-                    <a
-                        href="https://facebook.com/juliasuddinkhan"
-                        class="social-link"
-                        aria-label="Facebook"
-                        title="Facebook"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-brands fa-facebook"></i>
-
-                    </a>
-
-
-                    <!-- INSTAGRAM -->
-
-                    <a
-                        href="https://www.instagram.com/julias_jisan"
-                        class="social-link"
-                        aria-label="Instagram"
-                        title="Instagram"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                    </a>
+                    <span class="research-tag">
+                        Retrieval-Augmented Generation
+                    </span>
 
                 </div>
-
-
-                <!-- DOWNLOAD CV -->
-
-                <div class="cv-section">
-
-                    <a
-                        href="files/Julias Uddin Khan_CV.pdf"
-                        class="cv-button"
-                        download
-                    >
-
-                        <i class="fa-solid fa-file-pdf"></i>
-
-                        <span>
-                            DOWNLOAD CV
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </aside>
-
-
-            <!-- =================================================
-                 RIGHT CONTENT
-            ================================================== -->
-
-            <section class="content">
-
-
-                <!-- =========================================
-                     BIOGRAPHY
-                ========================================== -->
-
-                <section class="biography-section">
-
-                    <h2 class="section-title">
-                        BIOGRAPHY
-                    </h2>
-
-
-                    <!-- INTRODUCTION -->
-
-                    <p>
-
-                        <strong>Julias Uddin Khan</strong>
-                        is a Computer Science and Engineering
-                        student at
-                        <strong>University of Asia Pacific</strong>,
-                        with a strong passion for
-                        <strong>Artificial Intelligence</strong>,
-                        <strong>Machine Learning</strong>,
-                        <strong>Deep Learning</strong>,
-                        <strong>Explainable AI</strong>,
-                        and
-                        <strong>
-                            Retrieval-Augmented Generation (RAG)
-                        </strong>.
-
-                    </p>
-
-
-                    <!-- MOTIVATION -->
-
-                    <p>
-
-                        I am driven by continuous learning,
-                        research, and innovation, with a goal of
-                        building intelligent and impactful solutions
-                        that create meaningful value for people
-                        and society.
-
-                    </p>
-
-
-                    <!-- RESEARCH -->
-
-                    <p>
-
-                        My interests lie at the intersection of
-                        AI research and practical
-                        software development.
-
-                        My current research focuses on applying
-                        Machine Learning,
-                        Deep Learning, and
-                        Explainable AI.
-
-                        I am also exploring multilingual
-                        Question Answering
-                        systems using
-                        Retrieval-Augmented Generation (RAG).
-
-                    </p>
-
-
-                    <!-- TECHNICAL EXPERIENCE -->
-
-                    <p>
-
-                        Beyond research, I have experience working
-                        with
-                        <strong>backend development</strong>,
-                        <strong>web applications</strong>,
-                        <strong>databases</strong>,
-                        <strong>IoT</strong>, and
-                        <strong>robotics</strong> projects.
-
-                        I enjoy turning ideas into practical solutions
-                        and exploring emerging technologies that can
-                        address real-world challenges.
-
-                    </p>
-
-
-                    <!-- PERSONAL INTERESTS -->
-
-                    <p>
-
-                        Beyond technology and research, I enjoy
-                        <strong>Travelling</strong> and
-                        <strong>Content Creation</strong>.
-
-                        I love wandering through places, capturing
-                        faces, and telling untold stories one frame
-                        at a time.
-
-                        As a content creator, I capture moments,
-                        craft stories, and create visuals that speak
-                        louder than words.
-
-                    </p>
-
-                </section>
-
-
-                <!-- =========================================
-                     HIGHLIGHT
-                ========================================== -->
-
-                <div class="highlight-box">
-
-                    <div class="highlight-icon">
-
-                        <i class="fa-solid fa-lightbulb"></i>
-
-                    </div>
-
-
-                    <div class="highlight-text">
-
-                        I am actively interested in research
-                        opportunities and collaborations.
-
-                    </div>
-
-                </div>
-
-
-                <!-- =========================================
-                     AREAS OF INTEREST
-                ========================================== -->
-
-                <section class="research-section">
-
-                    <h2 class="research-title">
-                        AREAS OF INTEREST
-                    </h2>
-
-
-                    <div class="content-divider"></div>
-
-
-                    <div class="research-tags">
-
-
-                        <!-- FULL-STACK DEVELOPMENT -->
-
-                        <span class="research-tag">
-                            Full-Stack Development
-                        </span>
-
-
-                        <!-- MACHINE LEARNING -->
-
-                        <span class="research-tag">
-                            Machine Learning
-                        </span>
-
-
-                        <!-- DEEP LEARNING -->
-
-                        <span class="research-tag">
-                            Deep Learning
-                        </span>
-
-
-                        <!-- XAI -->
-
-                        <span class="research-tag">
-                            Explainable AI
-                        </span>
-
-
-                        <!-- RAG -->
-
-                        <span class="research-tag">
-                            Retrieval-Augmented Generation
-                        </span>
-
-                    </div>
-
-                </section>
 
             </section>
 
-        </div>
+        </section>
 
     </div>
 
-</main>
+</div>
+```
 
+</main>
 
 <!-- =====================================================
      FOOTER
@@ -671,117 +536,80 @@
 
 <footer class="site-footer">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="footer-content">
+    <div class="footer-content">
 
-            <p>
-                © 2026 Julias Uddin Khan
-            </p>
+        <p>
+            © 2026 Julias Uddin Khan
+        </p>
 
-
-            <p>
-                Last Updated: September 2026
-            </p>
-
-        </div>
+        <p>
+            Last Updated: September 2026
+        </p>
 
     </div>
 
+</div>
+```
+
 </footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
 
 <script src="js/script.js"></script>
 
-
-<!-- =====================================================
-     MOBILE MENU SCRIPT
-====================================================== -->
-
 <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        const menuButton =
-            document.getElementById("mobileMenuButton");
+    const menuButton =
+        document.getElementById("mobileMenuButton");
 
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-
-        if (!menuButton || !mobileMenu) {
-            return;
-        }
+    const mobileMenu =
+        document.getElementById("mobileMenu");
 
 
-        /* OPEN / CLOSE MENU */
-
-        menuButton.addEventListener("click", function (event) {
-
-            event.stopPropagation();
-
-            const isOpen =
-                mobileMenu.classList.toggle("show");
+    if (!menuButton || !mobileMenu) {
+        return;
+    }
 
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+    menuButton.addEventListener("click", function (event) {
 
-        });
+        event.stopPropagation();
 
+        const isOpen =
+            mobileMenu.classList.toggle("show");
 
-        /* CLOSE MENU WHEN CLICKING OUTSIDE */
-
-        document.addEventListener("click", function (event) {
-
-            if (
-                !mobileMenu.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-
-                mobileMenu.classList.remove("show");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        });
-
-
-        /* CLOSE MENU AFTER SELECTING AN ITEM */
-
-        const mobileMenuLinks =
-            document.querySelectorAll(".mobile-menu-link");
-
-
-        mobileMenuLinks.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mobileMenu.classList.remove("show");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
 
     });
 
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !mobileMenu.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+
+            mobileMenu.classList.remove("show");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+});
+
 </script>
-```
 
 </body>
 
