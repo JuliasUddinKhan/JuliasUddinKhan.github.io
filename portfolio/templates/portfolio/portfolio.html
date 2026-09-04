@@ -28,15 +28,27 @@
     </title>
 
 
-    <link
-        rel="stylesheet"
-        href="{% static 'portfolio/css/style.css' %}"
-    >
-
+    <!-- Font Awesome -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Devicon -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+
+
+    <!-- Django Static CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio/css/style.css' %}"
     >
 
 
@@ -45,39 +57,60 @@
     <style>
 
         .desktop-nav-options {
+
             display: flex;
             align-items: center;
             gap: 45px;
+
         }
+
 
         .mobile-menu-container {
+
             display: none;
             position: relative;
+
         }
+
 
         .mobile-menu-button {
+
             border: none;
             background: transparent;
+
             color: #344454;
+
             font-size: 19px;
+
             cursor: pointer;
+
             padding: 5px;
+
         }
+
 
         .mobile-menu-button:hover {
+
             color: #30445a;
+
         }
 
+
         .mobile-menu {
+
             display: none;
+
             position: absolute;
+
             top: 38px;
             right: 0;
+
             min-width: 165px;
 
             background: #ffffff;
 
             border: 1px solid #dddddd;
+
             border-radius: 4px;
 
             box-shadow:
@@ -86,56 +119,121 @@
             z-index: 1000;
 
             padding: 7px 0;
+
         }
+
 
         .mobile-menu.show {
+
             display: block;
+
         }
 
+
         .mobile-menu-link {
+
             display: block;
+
             padding: 10px 18px;
 
             color: #344454;
 
             font-size: 14px;
+
             font-weight: 400;
 
             text-decoration: none;
 
             white-space: nowrap;
+
         }
+
 
         .mobile-menu-link:hover {
+
             background: #f5f7f9;
+
             color: #30445a;
+
         }
 
+
         .mobile-menu-link.active {
+
             color: #30445a;
+
             font-weight: 700;
+
         }
+
+
+        /* =====================================================
+           TECHNOLOGY ICONS
+        ====================================================== */
+
+        .skill-tag i {
+
+            font-size: 17px;
+
+            margin-right: 7px;
+
+            vertical-align: middle;
+
+        }
+
+
+        .skill-tag .devicon-cplusplus-plain,
+        .skill-tag .devicon-c-plain,
+        .skill-tag .devicon-python-plain,
+        .skill-tag .devicon-java-plain,
+        .skill-tag .devicon-html5-plain,
+        .skill-tag .devicon-css3-plain,
+        .skill-tag .devicon-javascript-plain,
+        .skill-tag .devicon-react-original,
+        .skill-tag .devicon-mysql-plain,
+        .skill-tag .devicon-postgresql-plain,
+        .skill-tag .devicon-github-original,
+        .skill-tag .devicon-vscode-plain,
+        .skill-tag .devicon-pycharm-plain,
+        .skill-tag .devicon-arduino-plain,
+        .skill-tag .devicon-linux-plain {
+
+            font-size: 18px;
+
+        }
+
 
         @media (max-width: 700px) {
 
             .desktop-nav-options {
+
                 display: none;
+
             }
+
 
             .mobile-menu-container {
+
                 display: block;
+
             }
 
+
             .nav-links {
+
                 gap: 25px;
+
             }
 
         }
 
+
         @media (max-width: 420px) {
 
             .nav-links {
+
                 gap: 18px;
+
             }
 
         }
@@ -149,7 +247,7 @@
 
 
 <!-- =====================================================
-     HEADER / NAVIGATION
+     HEADER
 ====================================================== -->
 
 <header class="site-header">
@@ -181,9 +279,10 @@
                 </a>
 
 
-                <!-- DESKTOP OPTIONS -->
+                <!-- DESKTOP NAVIGATION -->
 
                 <div class="desktop-nav-options">
+
 
                     <a
                         href="{% url 'projects' %}"
@@ -203,9 +302,10 @@
                 </div>
 
 
-                <!-- MOBILE MENU -->
+                <!-- MOBILE NAVIGATION -->
 
                 <div class="mobile-menu-container">
+
 
                     <button
                         type="button"
@@ -224,6 +324,7 @@
                         class="mobile-menu"
                         id="mobileMenu"
                     >
+
 
                         <a
                             href="{% url 'projects' %}"
@@ -265,10 +366,11 @@
 
 
             <!-- =================================================
-                 LEFT SIDEBAR
+                 SIDEBAR
             ================================================== -->
 
             <aside class="sidebar">
+
 
                 <div class="profile-container">
 
@@ -297,7 +399,10 @@
                 </p>
 
 
+                <!-- SOCIAL LINKS -->
+
                 <div class="social-links">
+
 
                     <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
@@ -307,7 +412,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-solid fa-envelope"></i>
+
                     </a>
 
 
@@ -319,7 +426,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-solid fa-graduation-cap"></i>
+
                     </a>
 
 
@@ -331,7 +440,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <i class="fa-brands fa-github"></i>
+
+                        <i class="devicon-github-original"></i>
+
                     </a>
 
 
@@ -343,7 +454,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-brands fa-linkedin"></i>
+
                     </a>
 
 
@@ -355,7 +468,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-brands fa-facebook"></i>
+
                     </a>
 
 
@@ -367,11 +482,15 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-brands fa-instagram"></i>
+
                     </a>
 
                 </div>
 
+
+                <!-- CV -->
 
                 <div class="cv-section">
 
@@ -406,7 +525,9 @@
                 </h1>
 
 
-                <!-- RESEARCH INTERESTS -->
+                <!-- =================================================
+                     RESEARCH INTERESTS
+                ================================================== -->
 
                 <section class="portfolio-block">
 
@@ -429,7 +550,6 @@
                             Explainable AI
                         </span>
 
-
                         <span class="research-tag">
                             Retrieval-Augmented Generation
                         </span>
@@ -437,6 +557,11 @@
                     </div>
 
                 </section>
+
+
+                <!-- =================================================
+                     CURRENTLY LEARNING
+                ================================================== -->
 
                 <section class="portfolio-block">
 
@@ -468,7 +593,9 @@
                 </section>
 
 
-                <!-- TECHNICAL SKILLS -->
+                <!-- =================================================
+                     TECHNICAL SKILLS
+                ================================================== -->
 
                 <section class="portfolio-block">
 
@@ -480,99 +607,60 @@
                     <div class="skills-grid">
 
 
+                        <!-- PROGRAMMING LANGUAGES -->
+
                         <div class="skill-category">
 
                             <h3>
                                 PROGRAMMING LANGUAGES
                             </h3>
 
+
                             <div class="skill-tags">
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-c"></i>
+
+                                    <i class="devicon-c-plain"></i>
+
                                     C
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-code"></i>
+
+                                    <i class="devicon-cplusplus-plain"></i>
+
                                     C++
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-brands fa-python"></i>
+
+                                    <i class="devicon-python-plain"></i>
+
                                     Python
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-brands fa-java"></i>
+
+                                    <i class="devicon-java-plain"></i>
+
                                     Java
+
                                 </span>
+
+
 
                             </div>
 
                         </div>
 
-
-                        <div class="skill-category">
-
-                            <h3>
-                                AI &amp; DATA SCIENCE
-                            </h3>
-
-                            <div class="skill-tags">
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-brain"></i>
-                                    Machine Learning
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-network-wired"></i>
-                                    Deep Learning
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    Explainable AI (XAI)
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-chart-column"></i>
-                                    Data Visualization
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="skill-category">
-
-                            <h3>
-                                SOFTWARE ENGINEERING
-                            </h3>
-
-                            <div class="skill-tags">
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-vial"></i>
-                                    Software Testing
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-cubes"></i>
-                                    Object-Oriented Programming (OOP)
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-globe"></i>
-                                    Web Development
-                                </span>
-
-                            </div>
-
-                        </div>
-
+                        <!-- DATABASE -->
 
                         <div class="skill-category">
 
@@ -580,22 +668,34 @@
                                 DATABASE
                             </h3>
 
+
                             <div class="skill-tags">
 
-                                <span class="skill-tag">
-                                    <i class="fa-solid fa-database"></i>
-                                    Database Management Systems (DBMS)
-                                </span>
 
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-server"></i>
-                                    MySQL
+
+                                    <i class="fa-solid fa-database"></i>
+
+                                    Database Management Systems (DBMS)
+
                                 </span>
+
+
+                                <span class="skill-tag">
+
+                                    <i class="devicon-mysql-plain"></i>
+
+                                    MySQL
+
+                                </span>
+
+
 
                             </div>
 
                         </div>
 
+                        <!-- TOOLS & TECHNOLOGIES -->
 
                         <div class="skill-category">
 
@@ -603,53 +703,249 @@
                                 TOOLS &amp; TECHNOLOGIES
                             </h3>
 
+
                             <div class="skill-tags">
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-brands fa-github"></i>
+
+                                    <i class="devicon-github-original"></i>
+
                                     GitHub
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-code"></i>
+
+                                    <i class="devicon-vscode-plain"></i>
+
                                     VS Code
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-laptop-code"></i>
+
+                                    <i class="devicon-pycharm-plain"></i>
+
                                     PyCharm
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-microchip"></i>
+
+                                    <i class="devicon-arduino-plain"></i>
+
                                     Arduino IDE
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-drafting-compass"></i>
+
+                                    <i class="fa-solid fa-compass-drafting"></i>
+
                                     AutoCAD
+
                                 </span>
 
+
                                 <span class="skill-tag">
+
                                     <i class="fa-solid fa-cube"></i>
+
                                     Tinkercad
+
                                 </span>
 
+
                                 <span class="skill-tag">
-                                    <i class="fa-solid fa-network-wired"></i>
+
+                                    <i class="fa-solid fa-wave-square"></i>
+
                                     OptiSystem
+
+                                </span>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- =================================================
+                             Web Technologies
+                        ================================================== -->
+
+                        <div class="skill-category">
+
+                            <h3>
+                                WEB TECHNOLOGIES
+                            </h3>
+
+
+                            <div class="skill-tags">
+
+                                <!-- HTML -->
+
+                                <span class="skill-tag">
+
+                                    <i class="devicon-html5-plain"></i>
+
+                                    HTML
+
+                                </span>
+
+
+                                <!-- CSS -->
+
+                                <span class="skill-tag">
+
+                                    <i class="devicon-css3-plain"></i>
+
+                                    CSS
+
+                                </span>
+
+
+                                <!-- JAVASCRIPT -->
+
+                                <span class="skill-tag">
+
+                                    <i class="devicon-javascript-plain"></i>
+
+                                    JavaScript
+
+                                </span>
+
+
+                                <!-- REACT -->
+
+                                <span class="skill-tag">
+
+                                    <i class="devicon-react-original"></i>
+
+                                    React JS
+
+                                </span>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- AI & DATA SCIENCE -->
+
+                        <div class="skill-category">
+
+                            <h3>
+                                AI &amp; DATA SCIENCE
+                            </h3>
+
+
+                            <div class="skill-tags">
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-brain"></i>
+
+                                    Machine Learning
+
+                                </span>
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-network-wired"></i>
+
+                                    Deep Learning
+
+                                </span>
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                                    Explainable AI (XAI)
+
+                                </span>
+
+
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-database"></i>
+
+                                    Retrieval-Augmented Generation
+
                                 </span>
 
                             </div>
 
                         </div>
 
+
+                        <!-- SOFTWARE ENGINEERING -->
+
+                        <div class="skill-category">
+
+                            <h3>
+                                SOFTWARE ENGINEERING
+                            </h3>
+
+
+                            <div class="skill-tags">
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-vial"></i>
+
+                                    Software Testing
+
+                                </span>
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-cubes"></i>
+
+                                    Object-Oriented Programming (OOP)
+
+                                </span>
+
+
+                                <span class="skill-tag">
+
+                                    <i class="fa-solid fa-globe"></i>
+
+                                    Web Development
+
+                                </span>
+
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+
                     </div>
 
                 </section>
 
 
-                <!-- EDUCATION -->
+                <!-- =================================================
+                     EDUCATION
+                ================================================== -->
 
                 <section class="portfolio-block">
 
@@ -660,9 +956,13 @@
 
                     <div class="education-item">
 
+
                         <div class="education-icon">
+
                             <i class="fa-solid fa-graduation-cap"></i>
+
                         </div>
+
 
                         <div class="education-details">
 
@@ -670,12 +970,18 @@
                                 Bachelor of Science in Computer Science &amp; Engineering (CSE)
                             </h3>
 
+
                             <p class="education-institution">
                                 University of Asia Pacific (UAP)
                             </p>
 
+
                             <p>
-                                <strong>CGPA:</strong>
+
+                                <strong>
+                                    CGPA:
+                                </strong>
+
                                 3.86/4.00
 
                                 <span class="education-separator">
@@ -683,20 +989,29 @@
                                 </span>
 
                                 Up to 7th Semester
+
                             </p>
 
+
                             <p>
+
                                 <strong>
                                     Expected Graduation:
                                 </strong>
+
                                 December 2026
+
                             </p>
 
+
                             <p>
+
                                 <strong>
                                     Registration ID:
                                 </strong>
+
                                 22201034
+
                             </p>
 
                         </div>
@@ -706,9 +1021,13 @@
 
                     <div class="education-item">
 
+
                         <div class="education-icon">
+
                             <i class="fa-solid fa-school"></i>
+
                         </div>
+
 
                         <div class="education-details">
 
@@ -716,13 +1035,20 @@
                                 Higher Secondary Certificate (HSC)
                             </h3>
 
+
                             <p class="education-institution">
                                 BPATC School &amp; College
                             </p>
 
+
                             <p>
-                                <strong>GPA:</strong>
+
+                                <strong>
+                                    GPA:
+                                </strong>
+
                                 5.00/5.00
+
                             </p>
 
                         </div>
@@ -732,9 +1058,13 @@
 
                     <div class="education-item">
 
+
                         <div class="education-icon">
+
                             <i class="fa-solid fa-school"></i>
+
                         </div>
+
 
                         <div class="education-details">
 
@@ -742,13 +1072,20 @@
                                 Secondary School Certificate (SSC)
                             </h3>
 
+
                             <p class="education-institution">
                                 Dhamrai Hardinge High School &amp; College
                             </p>
 
+
                             <p>
-                                <strong>GPA:</strong>
+
+                                <strong>
+                                    GPA:
+                                </strong>
+
                                 5.00/5.00
+
                             </p>
 
                         </div>
@@ -757,85 +1094,6 @@
 
                 </section>
 
-
-                <!-- ACADEMIC HONORS -->
-
-                <section class="portfolio-block">
-
-                    <h2 class="section-title">
-                        ACADEMIC HONORS
-                    </h2>
-
-
-                    <div class="honors-container">
-
-
-                        <div class="honor-item">
-
-                            <div class="honor-icon">
-                                <i class="fa-solid fa-award"></i>
-                            </div>
-
-                            <div class="honor-content">
-
-                                <h3>
-                                    University Academic Honors
-                                </h3>
-
-                                <p>
-
-                                    Awarded the
-                                    <strong>
-                                        Vice Chancellor’s Honor Award
-                                    </strong>
-                                    in two semesters and the
-                                    <strong>
-                                        Dean’s Honor Award
-                                    </strong>
-                                    in four semesters in recognition
-                                    of academic excellence at the
-                                    University of Asia Pacific (UAP).
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="honor-item">
-
-                            <div class="honor-icon">
-                                <i class="fa-solid fa-medal"></i>
-                            </div>
-
-                            <div class="honor-content">
-
-                                <h3>
-                                    Board Scholarship
-                                </h3>
-
-                                <p>
-
-                                    Awarded the
-                                    <strong>
-                                        Board Scholarship
-                                    </strong>
-                                    in the Secondary School Certificate
-                                    (SSC) examination from the
-                                    <strong>
-                                        Dhaka Board, Bangladesh
-                                    </strong>.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
 
 
             </section>
@@ -861,6 +1119,7 @@
                 © 2026 Julias Uddin Khan
             </p>
 
+
             <p>
                 Last Updated: September 2026
             </p>
@@ -872,6 +1131,8 @@
 </footer>
 
 
+<!-- DJANGO JAVASCRIPT -->
+
 <script
     src="{% static 'portfolio/js/script.js' %}"
 ></script>
@@ -881,54 +1142,59 @@
 
 <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        const menuButton =
-            document.getElementById("mobileMenuButton");
+    const menuButton =
+        document.getElementById("mobileMenuButton");
 
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-
-        if (!menuButton || !mobileMenu) {
-            return;
-        }
+    const mobileMenu =
+        document.getElementById("mobileMenu");
 
 
-        menuButton.addEventListener("click", function (event) {
+    if (!menuButton || !mobileMenu) {
 
-            event.stopPropagation();
+        return;
 
-            const isOpen =
-                mobileMenu.classList.toggle("show");
+    }
+
+
+    menuButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+
+        const isOpen =
+            mobileMenu.classList.toggle("show");
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !mobileMenu.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+
+            mobileMenu.classList.remove("show");
+
 
             menuButton.setAttribute(
                 "aria-expanded",
-                isOpen ? "true" : "false"
+                "false"
             );
 
-        });
-
-
-        document.addEventListener("click", function (event) {
-
-            if (
-                !mobileMenu.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-
-                mobileMenu.classList.remove("show");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        });
+        }
 
     });
+
+});
 
 </script>
 

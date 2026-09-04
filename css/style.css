@@ -106,6 +106,13 @@ a {
     background: #ffffff;
 
     border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .navbar {
@@ -1416,7 +1423,9 @@ main {
     }
 
 
-    /* Header */
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .navbar {
         height: auto;
@@ -1426,19 +1435,41 @@ main {
         justify-content: center;
 
         padding-top: 13px;
-        padding-bottom: 13px;
+        padding-bottom: 18px;
     }
 
     .nav-links {
         margin-left: 0;
 
         gap: 25px;
+
+        align-items: center;
     }
 
     .nav-link {
         padding: 3px 0;
 
         font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       IMPORTANT FIX
+       Move underline BELOW the text on mobile.
+    ===================================================== */
+
+    .nav-link::after {
+        left: 0;
+
+        bottom: -6px;
+
+        height: 2px;
+    }
+
+    .nav-link.active::after {
+        width: 100%;
     }
 
     .desktop-nav-options {
@@ -1450,7 +1481,9 @@ main {
     }
 
 
-    /* Main */
+    /* =====================================================
+       MAIN
+    ===================================================== */
 
     .main-layout {
         display: block;
@@ -1460,7 +1493,9 @@ main {
     }
 
 
-    /* Sidebar */
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
 
     .sidebar {
         padding-top: 0;
@@ -1509,7 +1544,9 @@ main {
     }
 
 
-    /* Content */
+    /* =====================================================
+       CONTENT
+    ===================================================== */
 
     .section-title {
         font-size: 23px;
@@ -1554,7 +1591,9 @@ main {
     }
 
 
-    /* Portfolio */
+    /* =====================================================
+       PORTFOLIO
+    ===================================================== */
 
     .portfolio-section {
         padding: 55px 0;
@@ -1581,7 +1620,9 @@ main {
     }
 
 
-    /* Footer */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .footer-content {
         min-height: auto;
@@ -1617,6 +1658,17 @@ main {
 
     .nav-link {
         font-size: 14px;
+
+        padding: 3px 0;
+    }
+
+
+    /* =====================================================
+       IMPORTANT FIX FOR SMALL PHONES
+    ===================================================== */
+
+    .nav-link::after {
+        bottom: -6px;
     }
 
     .profile-image {
@@ -1688,392 +1740,11 @@ body.page-exit {
     opacity: 0;
 }
 
-/* =========================================================
-   FINAL PROFESSIONAL COLOR OVERRIDE
-   Paste this at the VERY END of style.css
-========================================================= */
-
-/* Main colors */
-body {
-    background: #ffffff;
-    color: #3f4a56;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.site-header {
-    background: #ffffff;
-    border-bottom: 1px solid #cbd5e1;
-}
-
-.nav-link {
-    color: #172b4d !important;
-}
-
-.nav-link:hover {
-    color: #0b1f3a !important;
-}
-
-.nav-link.active {
-    color: #0b1f3a !important;
-}
-
-.nav-link::after {
-    background: #172b4d !important;
-}
-
-.nav-link.active::after {
-    background: #172b4d !important;
-}
-
-
-/* Mobile menu */
-
-.mobile-menu-button {
-    color: #172b4d;
-}
-
-.mobile-menu-button:hover {
-    color: #0b1f3a;
-}
-
-.mobile-menu {
-    background: #ffffff;
-    border-color: #cbd5e1;
-
-    box-shadow:
-        0 8px 25px rgba(23, 43, 77, 0.15);
-}
-
-.mobile-menu-link {
-    color: #172b4d;
-}
-
-.mobile-menu-link:hover {
-    background: #f1f5f9;
-    color: #0b1f3a;
-}
-
-.mobile-menu-link.active {
-    color: #0b1f3a;
-}
-
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-.profile-image {
-    border-color: #eef2f7;
-
-    box-shadow:
-        0 5px 18px rgba(23, 43, 77, 0.12);
-}
-
-.profile-name {
-    color: #172b4d !important;
-}
-
-.profile-title {
-    color: #687789 !important;
-}
-
-
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
-
-.social-link {
-    color: #8a9aad !important;
-}
-
-.social-link:hover {
-    color: #172b4d !important;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
-
-.sidebar-heading {
-    color: #172b4d !important;
-}
-
-.sidebar-divider {
-    background: #d8dee6 !important;
-}
-
-
-/* =========================================================
-   AFFILIATION
-========================================================= */
-
-.affiliation-item {
-    color: #8795a5 !important;
-}
-
-
-/* =========================================================
-   CV BUTTON
-========================================================= */
-
-.cv-section {
-    border-top-color: #d8dee6 !important;
-    border-bottom-color: #d8dee6 !important;
-}
-
-.cv-button {
-    border-color: #172b4d !important;
-
-    color: #172b4d !important;
-
-    background: #ffffff !important;
-}
-
-.cv-button:hover {
-    background: #172b4d !important;
-
-    color: #ffffff !important;
-}
-
-
-/* =========================================================
-   MAIN HEADINGS
-========================================================= */
-
-.section-title {
-    color: #172b4d !important;
-}
-
-.portfolio-title {
-    color: #172b4d !important;
-}
-
-.research-title {
-    color: #172b4d !important;
-}
-
-
-/* =========================================================
-   BODY TEXT
-========================================================= */
-
-.biography-section p {
-    color: #3f4a56 !important;
-}
-
-.biography-section strong {
-    color: #172b4d !important;
-}
-
-.education-details p {
-    color: #4b5563 !important;
-}
-
-.honor-content p {
-    color: #4b5563 !important;
-}
-
-
-/* =========================================================
-   HIGHLIGHT BOX
-========================================================= */
-
-.highlight-box {
-    background: #eef4fa !important;
-
-    border-left-color: #172b4d !important;
-}
-
-.highlight-icon {
-    color: #60748a !important;
-}
-
-.highlight-text {
-    color: #172b4d !important;
-}
-
-
-/* =========================================================
-   RESEARCH TAGS
-========================================================= */
-
-.content-divider {
-    background: #cbd5e1 !important;
-}
-
-.research-tag {
-    background: #172b4d !important;
-
-    color: #ffffff !important;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skill-category h3 {
-    color: #52677d !important;
-
-    border-bottom-color: #dbe2e9 !important;
-}
-
-.skill-tag {
-    background: #f8fafc !important;
-
-    border-color: #d7dee6 !important;
-
-    color: #344454 !important;
-}
-
-.skill-tag:hover {
-    background: #eef4fa !important;
-
-    border-color: #9eacbb !important;
-
-    box-shadow:
-        0 4px 12px rgba(23, 43, 77, 0.08);
-}
-
-.skill-tag i {
-    color: #526b84 !important;
-}
-
-
-/* =========================================================
-   EDUCATION
-========================================================= */
-
-.education-item {
-    border-bottom-color: #e1e6eb !important;
-}
-
-.education-icon {
-    background: #eef2f6 !important;
-
-    color: #526b84 !important;
-}
-
-.education-details h3 {
-    color: #172b4d !important;
-}
-
-.education-institution {
-    color: #60748a !important;
-}
-
-.education-separator {
-    color: #aeb8c3 !important;
-}
-
-
-/* =========================================================
-   ACADEMIC HONORS
-========================================================= */
-
-.honor-item {
-    background: #ffffff !important;
-
-    border-color: #dce2e8 !important;
-}
-
-.honor-item:hover {
-    border-color: #b9c5d1 !important;
-
-    box-shadow:
-        0 6px 22px rgba(23, 43, 77, 0.09) !important;
-}
-
-.honor-icon {
-    background: #eef2f6 !important;
-
-    color: #526b84 !important;
-}
-
-.honor-content h3 {
-    color: #172b4d !important;
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.project-item {
-    background: #ffffff !important;
-
-    border-color: #dce2e8 !important;
-}
-
-.project-item:hover {
-    border-color: #aebbc8 !important;
-
-    box-shadow:
-        0 7px 24px rgba(23, 43, 77, 0.10) !important;
-}
-
-.project-item h3 {
-    color: #172b4d !important;
-}
-
-.project-item p {
-    color: #4b5563 !important;
-}
-
-.project-item strong {
-    color: #526b84 !important;
-}
-
-.project-link {
-    color: #60748a !important;
-}
-
-.project-item:hover .project-link {
-    color: #172b4d !important;
-}
-
-
-/* =========================================================
-   DOWNLOAD CV
-========================================================= */
-
-.download-cv {
-    border-color: #172b4d !important;
-
-    color: #172b4d !important;
-
-    background: #ffffff !important;
-}
-
-.download-cv:hover {
-    background: #172b4d !important;
-
-    color: #ffffff !important;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.site-footer {
-    background: #ffffff;
-
-    border-top-color: #d8dee6 !important;
-}
-
-.footer-content {
-    color: #718096 !important;
-}
 
 /* =========================================================
    FINAL PROFESSIONAL ACADEMIC COLOR PALETTE
 ========================================================= */
+
 
 /* ---------- MAIN ---------- */
 
@@ -2086,8 +1757,16 @@ body {
 /* ---------- HEADER ---------- */
 
 .site-header {
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+
     border-bottom: 1px solid #d1d5db !important;
+
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .nav-link {
@@ -2123,6 +1802,7 @@ body {
 
 .mobile-menu {
     background: #ffffff !important;
+
     border-color: #d1d5db !important;
 
     box-shadow:
@@ -2135,6 +1815,7 @@ body {
 
 .mobile-menu-link:hover {
     background: #f1f5f9 !important;
+
     color: #0f2742 !important;
 }
 
@@ -2143,9 +1824,7 @@ body {
 }
 
 
-/* =========================================================
-   PROFILE
-========================================================= */
+/* ---------- PROFILE ---------- */
 
 .profile-image {
     border-color: #e2e8f0 !important;
@@ -2163,9 +1842,7 @@ body {
 }
 
 
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
+/* ---------- SOCIAL ICONS ---------- */
 
 .social-link {
     color: #94a3b8 !important;
@@ -2176,9 +1853,7 @@ body {
 }
 
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
+/* ---------- SIDEBAR ---------- */
 
 .sidebar-heading {
     color: #1e3a5f !important;
@@ -2189,39 +1864,37 @@ body {
 }
 
 
-/* =========================================================
-   AFFILIATION
-========================================================= */
+/* ---------- AFFILIATION ---------- */
 
 .affiliation-item {
     color: #94a3b8 !important;
 }
 
 
-/* =========================================================
-   CV BUTTON
-========================================================= */
+/* ---------- CV BUTTON ---------- */
 
 .cv-section {
     border-top-color: #d7dee7 !important;
+
     border-bottom-color: #d7dee7 !important;
 }
 
 .cv-button {
     border-color: #1e3a5f !important;
+
     color: #1e3a5f !important;
+
     background: #ffffff !important;
 }
 
 .cv-button:hover {
     background: #1e3a5f !important;
+
     color: #ffffff !important;
 }
 
 
-/* =========================================================
-   MAIN HEADINGS
-========================================================= */
+/* ---------- MAIN HEADINGS ---------- */
 
 .section-title {
     color: #173b5f !important;
@@ -2236,9 +1909,7 @@ body {
 }
 
 
-/* =========================================================
-   BODY TEXT
-========================================================= */
+/* ---------- BODY TEXT ---------- */
 
 .biography-section p {
     color: #374151 !important;
@@ -2257,9 +1928,7 @@ body {
 }
 
 
-/* =========================================================
-   HIGHLIGHT BOX
-========================================================= */
+/* ---------- HIGHLIGHT BOX ---------- */
 
 .highlight-box {
     background: #edf4fa !important;
@@ -2276,9 +1945,7 @@ body {
 }
 
 
-/* =========================================================
-   RESEARCH TAGS
-========================================================= */
+/* ---------- RESEARCH TAGS ---------- */
 
 .content-divider {
     background: #cbd5e1 !important;
@@ -2286,27 +1953,30 @@ body {
 
 .research-tag {
     background: #1e3a5f !important;
+
     color: #ffffff !important;
 }
 
 
-/* =========================================================
-   SKILLS
-========================================================= */
+/* ---------- SKILLS ---------- */
 
 .skill-category h3 {
     color: #52677d !important;
+
     border-bottom-color: #d8e0e8 !important;
 }
 
 .skill-tag {
     background: #f8fafc !important;
+
     border-color: #d6dee7 !important;
+
     color: #374151 !important;
 }
 
 .skill-tag:hover {
     background: #edf4fa !important;
+
     border-color: #9aaabd !important;
 
     box-shadow:
@@ -2318,9 +1988,7 @@ body {
 }
 
 
-/* =========================================================
-   EDUCATION
-========================================================= */
+/* ---------- EDUCATION ---------- */
 
 .education-item {
     border-bottom-color: #e1e6eb !important;
@@ -2328,6 +1996,7 @@ body {
 
 .education-icon {
     background: #edf2f7 !important;
+
     color: #526b84 !important;
 }
 
@@ -2344,12 +2013,11 @@ body {
 }
 
 
-/* =========================================================
-   ACADEMIC HONORS
-========================================================= */
+/* ---------- ACADEMIC HONORS ---------- */
 
 .honor-item {
     background: #ffffff !important;
+
     border-color: #d8e0e8 !important;
 }
 
@@ -2362,6 +2030,7 @@ body {
 
 .honor-icon {
     background: #edf2f7 !important;
+
     color: #526b84 !important;
 }
 
@@ -2370,12 +2039,11 @@ body {
 }
 
 
-/* =========================================================
-   PROJECTS
-========================================================= */
+/* ---------- PROJECTS ---------- */
 
 .project-item {
     background: #ffffff !important;
+
     border-color: #d8e0e8 !important;
 }
 
@@ -2407,28 +2075,28 @@ body {
 }
 
 
-/* =========================================================
-   DOWNLOAD CV
-========================================================= */
+/* ---------- DOWNLOAD CV ---------- */
 
 .download-cv {
     border-color: #1e3a5f !important;
+
     color: #1e3a5f !important;
+
     background: #ffffff !important;
 }
 
 .download-cv:hover {
     background: #1e3a5f !important;
+
     color: #ffffff !important;
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ---------- FOOTER ---------- */
 
 .site-footer {
     background: #ffffff !important;
+
     border-top-color: #d7dee7 !important;
 }
 
@@ -2437,18 +2105,265 @@ body {
 }
 
 /* =========================================================
-   FIXED / STICKY HEADER
+   ACHIEVEMENTS PAGE ONLY
 ========================================================= */
 
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+/* Fix profile section ONLY on Achievements page */
+body:has(.achievements-content) .profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    background: rgba(255, 255, 255, 0.97);
+body:has(.achievements-content) .profile-name {
+    display: block;
+    width: 100%;
+}
 
-    border-bottom: 1px solid #d7dee7;
+body:has(.achievements-content) .profile-title {
+    display: block;
+    width: 100%;
+}
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+
+/* =========================================================
+   ACHIEVEMENTS CONTENT
+========================================================= */
+
+.achievements-content {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* Page sections */
+
+.achievements-content .achievement-section {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.achievements-content .achievement-section:first-of-type {
+    margin-top: 0;
+}
+
+
+/* Section titles */
+
+.achievements-content .achievement-section-title {
+    margin: 0;
+    color: #173b5f;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+
+/* Achievement list */
+
+.achievements-content .achievement-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+
+/* Achievement card */
+
+.achievements-content .achievement-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #d8e0e8;
+    border-radius: 6px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Hover */
+
+.achievements-content .achievement-item:hover {
+    transform: translateY(-2px);
+    border-color: #aebdcd;
+    box-shadow: 0 6px 22px rgba(15, 39, 66, 0.09);
+}
+
+
+/* Achievement icon */
+
+.achievements-content .achievement-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf2f7;
+    border-radius: 50%;
+
+    color: #526b84;
+    font-size: 19px;
+}
+
+
+/* Achievement details */
+
+.achievements-content .achievement-details {
+    min-width: 0;
+    flex: 1;
+}
+
+
+/* Achievement heading */
+
+.achievements-content .achievement-details h3 {
+    margin: 0 0 6px;
+
+    color: #173b5f;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+/* Achievement description */
+
+.achievements-content .achievement-details p {
+    margin: 0;
+
+    color: #4b5563;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+
+/* Strong text */
+
+.achievements-content .achievement-details strong {
+    color: #173b5f;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Profile fix ONLY on Achievements page */
+    body:has(.achievements-content) .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body:has(.achievements-content) .profile-name,
+    body:has(.achievements-content) .profile-title {
+        width: 100%;
+    }
+
+
+    /* Achievement sections */
+
+    .achievements-content .achievement-section {
+        margin-top: 40px;
+    }
+
+    .achievements-content .achievement-section:first-of-type {
+        margin-top: 0;
+    }
+
+
+    /* Section title */
+
+    .achievements-content .achievement-section-title {
+        font-size: 20px;
+    }
+
+
+    /* List */
+
+    .achievements-content .achievement-list {
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+
+    /* Cards */
+
+    .achievements-content .achievement-item {
+        gap: 15px;
+        padding: 18px;
+    }
+
+
+    /* Icons */
+
+    .achievements-content .achievement-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+
+    /* Text */
+
+    .achievements-content .achievement-details h3 {
+        font-size: 15px;
+    }
+
+    .achievements-content .achievement-details p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .achievements-content .achievement-section-title {
+        font-size: 19px;
+    }
+
+
+    .achievements-content .achievement-item {
+        gap: 12px;
+        padding: 16px;
+    }
+
+
+    .achievements-content .achievement-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+
+    .achievements-content .achievement-details h3 {
+        font-size: 14px;
+    }
+
+
+    .achievements-content .achievement-details p {
+        font-size: 12px;
+    }
 }

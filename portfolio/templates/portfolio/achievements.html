@@ -1,0 +1,692 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- =========================================
+         BASIC INFORMATION
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Achievements of Julias Uddin Khan"
+    >
+
+    <meta
+        name="author"
+        content="Julias Uddin Khan"
+    >
+
+    <title>Achievements | Julias Uddin Khan</title>
+
+
+    <!-- =========================================
+         FONT AWESOME
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio/css/style.css' %}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <div class="nav-links">
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="nav-link"
+                    >
+                        Home
+                    </a>
+
+
+                    <a
+                        href="{% url 'portfolio' %}"
+                        class="nav-link"
+                    >
+                        Portfolio
+                    </a>
+
+
+                    <div class="desktop-nav-options">
+
+                        <a
+                            href="{% url 'projects' %}"
+                            class="nav-link"
+                        >
+                            Projects
+                        </a>
+
+
+                        <a
+                            href="{% url 'achievements' %}"
+                            class="nav-link"
+                        >
+                            Achievements
+                        </a>
+
+                    </div>
+
+
+                    <!-- Mobile Menu -->
+
+                    <div class="mobile-menu-container">
+
+                        <button
+                            type="button"
+                            class="mobile-menu-button"
+                            id="mobileMenuButton"
+                            aria-label="Open navigation menu"
+                            aria-expanded="false"
+                        >
+
+                            <i class="fa-solid fa-bars"></i>
+
+                        </button>
+
+
+                        <div
+                            class="mobile-menu"
+                            id="mobileMenu"
+                        >
+
+                            <a
+                                href="{% url 'projects' %}"
+                                class="mobile-menu-link"
+                            >
+                                Projects
+                            </a>
+
+
+                            <a
+                                href="{% url 'achievements' %}"
+                                class="mobile-menu-link active"
+                            >
+                                Achievements
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main>
+
+        <div class="container">
+
+            <div class="main-layout">
+
+
+                <!-- =================================
+                     LEFT SIDEBAR
+                ================================== -->
+
+                <aside class="sidebar">
+
+
+                    <!-- Profile -->
+
+                    <div class="profile-container">
+
+                        <img
+                            src="{% static 'portfolio/files/profile.jpeg' %}"
+                            alt="Julias Uddin Khan"
+                            class="profile-image"
+                        >
+
+
+                        <h1 class="profile-name">
+                            Julias Uddin Khan
+                        </h1>
+
+
+                        <p class="profile-title">
+                            MSc/PhD Aspirants | Researcher in Machine Learning, Deep Learning & Explainable AI | Full-Stack Developer | CSE @ University of Asia Pacific
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Social Links -->
+
+                    <div class="social-links">
+
+
+                        <!-- Personal Email -->
+
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=juliasjisan17@gmail.com"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                        >
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+
+                        <!-- University Email -->
+
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=22201034@uap-bd.edu"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="University Email"
+                        >
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                        </a>
+
+
+                        <!-- GitHub -->
+
+                        <a
+                            href="https://github.com/JuliasUddinKhan"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+
+                            <i class="fa-brands fa-github"></i>
+
+                        </a>
+
+
+                        <!-- LinkedIn -->
+
+                        <a
+                            href="https://www.linkedin.com/in/juliasuddinkhan/"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+
+                        <!-- Facebook -->
+
+                        <a
+                            href="https://facebook.com/juliasuddinkhan"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                        >
+
+                            <i class="fa-brands fa-facebook-f"></i>
+
+                        </a>
+
+
+                        <!-- Instagram -->
+
+                        <a
+                            href="https://www.instagram.com/julias_jisan"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+                    </div>
+
+                    <!-- DOWNLOAD CV -->
+
+                    <div class="cv-section">
+
+                        <a
+                            href="{% static 'portfolio/files/Julias Uddin Khan_CV.pdf' %}"
+                            class="cv-button"
+                            download
+                        >
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            <span>
+                                DOWNLOAD CV
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+
+
+                </aside>
+
+
+
+                <!-- =================================
+                     ACHIEVEMENTS CONTENT
+                ================================== -->
+
+                <section class="content achievements-content">
+
+
+                    <!-- Page Title -->
+
+                    <h2 class="section-title">
+                        ACHIEVEMENTS
+                    </h2>
+
+
+
+                    <!-- =================================
+     ACADEMIC HONORS
+================================== -->
+
+<section class="achievement-section">
+
+    <h2 class="achievement-section-title">
+        Academic Honors
+    </h2>
+
+
+    <div class="achievement-list">
+
+
+        <!-- VC Award -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-icon">
+                <i class="fa-solid fa-award"></i>
+            </div>
+
+            <div class="achievement-details">
+
+                <h3>
+                    Vice Chancellor's Honor Award
+                </h3>
+
+                <p>
+                    Recognition of academic excellence at the University of Asia Pacific (UAP).
+                    Awarded in <strong>2 semesters</strong>.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Dean Award -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-icon">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+
+            <div class="achievement-details">
+
+                <h3>
+                    Dean's Honor Award
+                </h3>
+
+                <p>
+                    Recognition of academic excellence at the University of Asia Pacific (UAP).
+                    Awarded in <strong>4 semesters</strong>.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Board Scholarship -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="achievement-details">
+
+                <h3>
+                    Board Scholarship
+                </h3>
+
+                <p>
+                    Awarded in the <strong>Secondary School Certificate (SSC) </strong> Examination
+                    under the Dhaka Board, Bangladesh.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+                    <!-- =================================
+                         COMPETITIONS
+                    ================================== -->
+
+                    <section class="achievement-section">
+
+                        <h2 class="achievement-section-title">
+                            Competitions
+                        </h2>
+
+
+                        <div class="achievement-list">
+
+
+                            <!-- Robo Expo -->
+
+                            <div class="achievement-item">
+
+                                <div class="achievement-icon">
+
+                                    <i class="fa-solid fa-trophy"></i>
+
+                                </div>
+
+
+                                <div class="achievement-details">
+
+                                    <h3>
+                                        Champion — Robo Expo 2.0
+                                    </h3>
+
+                                    <p>
+                                        Organized by Robotics Club, UAP-CSE
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- View Finder Season 7 -->
+
+                            <div class="achievement-item">
+
+                                <div class="achievement-icon">
+
+                                    <i class="fa-solid fa-trophy"></i>
+
+                                </div>
+
+
+                                <div class="achievement-details">
+
+                                    <h3>
+                                        Champion — View Finder Season 7
+                                    </h3>
+
+                                    <p>
+                                        Organized by Film and Photography Club, UAP-CSE
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- View Finder Season 6 -->
+
+                            <div class="achievement-item">
+
+                                <div class="achievement-icon">
+
+                                    <i class="fa-solid fa-medal"></i>
+
+                                </div>
+
+
+                                <div class="achievement-details">
+
+                                    <h3>
+                                        1st Runner-up — View Finder Season 6
+                                    </h3>
+
+                                    <p>
+                                        Organized by Film and Photography Club, UAP-CSE
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================
+                         CERTIFICATION
+                    ================================== -->
+
+                    <section class="achievement-section">
+
+                        <h2 class="achievement-section-title">
+                            Certification
+                        </h2>
+
+
+                        <div class="achievement-list">
+
+
+                            <div class="achievement-item">
+
+                                <div class="achievement-icon">
+
+                                    <i class="fa-solid fa-certificate"></i>
+
+                                </div>
+
+
+                                <div class="achievement-details">
+
+                                    <h3>
+                                        Excel Essentials for Workplace Productivity
+                                    </h3>
+
+                                    <p>
+                                        Offered by UNICEF Passport to Earning
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <p>
+                    © 2026 Julias Uddin Khan
+                </p>
+
+                <p>
+                    Last Updated: September 2026
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         MOBILE MENU
+    ========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const button =
+                    document.getElementById(
+                        "mobileMenuButton"
+                    );
+
+                const menu =
+                    document.getElementById(
+                        "mobileMenu"
+                    );
+
+
+                if (!button || !menu) {
+                    return;
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        menu.classList.toggle("show");
+
+                        const isOpen =
+                            menu.classList.contains("show");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            isOpen
+                        );
+
+                    }
+                );
+
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (
+                            !button.contains(event.target) &&
+                            !menu.contains(event.target)
+                        ) {
+
+                            menu.classList.remove("show");
+
+                            button.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+    <!-- =========================================
+         MAIN JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="{% static 'portfolio/js/script.js' %}"
+    ></script>
+
+
+</body>
+
+</html>
